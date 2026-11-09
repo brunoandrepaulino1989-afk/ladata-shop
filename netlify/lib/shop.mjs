@@ -1,7 +1,6 @@
 // Shared server-side shop logic: catalogue, prices, Stripe REST calls and order emails.
 // Prices always come from products.json here, never from the browser.
-import { createRequire } from "node:module";
-const products = createRequire(import.meta.url)("./products.json");
+import products from "./products.json" with { type: "json" };
 
 export const SITE = (process.env.SITE_URL || "https://ladata.shop").replace(/\/$/, "");
 export const SHIP_CENTS = 990; // flat FedEx shipping, excl. VAT
