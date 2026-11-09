@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ladata Shop · Recovery tech for your home</title>
+<meta name="description" content="Recovery tech from Ladata, the House of Human Optimisation: massage guns, compression boots, LED and saunas. Shipped all over Europe.">
+<link rel="icon" type="image/png" href="/img/ladata-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: On-style homepage. Full-bleed triptych hero, slim campaign strip, category tiles, product rail, split editorial, 3-step ritual, cream club band, newsletter, footer. All white. */
+:root{
+  --bg:#ffffff;
+  --ink:#111111;
+  --muted:#6b6b6b;
+  --line:#e3e3e1;
+  --cream:#f6f1e7;
+  --red:#b0141f;
+  --sale:#c8381e;
+  --font:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1600px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+img{display:block}
+
+.promo{color:var(--muted);text-align:center;font-size:13px;border-bottom:1px solid var(--line)}
+.promo .wrap{padding-block:9px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:32px;height:64px}
+.logo{display:block;flex:0 0 auto}
+.logo img{height:34px;width:auto;display:block}
+nav{display:flex;gap:26px;font-size:15px;font-weight:500}
+nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:14px}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--muted)}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+.bag{position:relative}
+.bag b{position:absolute;top:-6px;right:-9px;border:1px solid var(--ink);background:var(--bg);font-size:10px;border-radius:9px;min-width:16px;height:16px;display:grid;place-items:center;padding:0 4px}
+nav a{white-space:nowrap}
+@media (max-width:1180px){nav{gap:18px}.search span{display:none}}
+@media (max-width:900px){header .wrap{flex-wrap:wrap;height:auto;padding-block:12px 0;row-gap:4px}nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;gap:22px;padding:8px 0 12px;font-size:14px}nav::-webkit-scrollbar{display:none}}
+
+/* hero */
+.hero{position:relative;display:grid;grid-template-columns:1fr;height:min(78vh,760px);min-height:440px}
+.hero figure{margin:0;position:relative;overflow:hidden}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0) 55%);pointer-events:none}
+.hero-txt{position:absolute;left:0;right:0;bottom:0;z-index:1;color:#fff}
+.hero-txt .wrap{padding-block:0 44px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.hero h1{font-size:clamp(44px,7vw,104px);font-weight:600;letter-spacing:-.045em;line-height:.92;margin:0}
+.hero p{margin:14px 0 0;font-size:17px;max-width:44ch;opacity:.92}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:999px;padding:13px 22px;font-weight:600;font-size:15px;border:1px solid currentColor}
+.btn.solid{background:#fff;color:var(--ink);border-color:#fff}
+.btn.ghost{color:#fff}
+.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.line{color:var(--ink)}
+@media (max-width:760px){.hero{height:auto;min-height:0}.hero figure{aspect-ratio:4/5}.hero-txt .wrap{padding-block:0 24px}}
+
+/* campaign strip */
+.bf{background:var(--red);color:#fff}
+.bf .wrap{display:flex;align-items:center;gap:28px;padding-block:14px;flex-wrap:wrap}
+.bf-tag{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding-right:28px;border-right:1px solid rgba(255,255,255,.35);white-space:nowrap}
+.bf-copy{flex:1;min-width:0;font-size:16px;font-weight:500}
+.bf-copy span{font-size:13px;opacity:.75;font-weight:400;margin-left:12px}
+.bf-cd{font-size:15px;font-variant-numeric:tabular-nums}
+.bf-cd i{font-style:normal;opacity:.45;margin:0 5px}
+.bf-cd small{font-size:11px;opacity:.7;margin-left:1px}
+.bf a{font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;white-space:nowrap}
+@media (max-width:900px){.bf .wrap{gap:8px 20px}.bf-tag{border:0;padding:0;width:100%}.bf-copy span{display:block;margin:2px 0 0}}
+
+section.block{padding-block:72px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px}
+.sh h2{font-size:clamp(26px,3vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1;margin:0;text-wrap:balance}
+.sh a{font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px;white-space:nowrap}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.imglink{display:block;position:absolute;inset:0}.imglink img{width:100%;height:100%;object-fit:cover}
+.split a.img{display:block}
+.cat{display:flex;flex-direction:column;gap:12px}
+.cat .t{aspect-ratio:1;border:1px solid var(--line);overflow:hidden;position:relative;max-width:100%}
+.cat .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10%;transition:transform .5s ease}
+.cat .t img.cover{object-fit:cover;padding:0}
+.cat:hover .t img{transform:scale(1.05)}
+.cat b{font-weight:600}
+.cat span{color:var(--muted);font-size:14px;margin-left:6px}
+@media (max-width:1100px){.cats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+
+/* product rail */
+.rail-wrap{position:relative}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px)/4);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.rail::-webkit-scrollbar{display:none}
+@media (max-width:1100px){.rail{grid-auto-columns:calc((100% - 24px)/3)}}
+@media (max-width:760px){.rail{grid-auto-columns:72%}}
+.card{scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .t{aspect-ratio:1;border:1px solid var(--line);position:relative;overflow:hidden}
+.card .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6%;transition:transform .5s ease}
+.card .t img.cover{object-fit:cover;padding:0}
+.card:hover .t img{transform:scale(1.04)}
+.badge{position:absolute;top:12px;left:12px;font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--line);padding:3px 8px;z-index:1}
+.nm{font-weight:600}
+.sub{color:var(--muted);font-size:14px}
+.pr{font-variant-numeric:tabular-nums}
+.pr s{color:var(--muted);margin-left:6px}
+.pr .now{color:var(--sale)}
+.vat{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:2px}
+.qadd{margin-top:8px;width:100%;border:1px solid var(--ink);border-radius:999px;padding:10px 14px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,color .2s}
+.qadd:hover{background:#fff;color:var(--ink)}
+.qadd.ok{background:#fff;color:var(--ink)}
+.qadd svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.arrows{display:flex;gap:8px}
+.arrows button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;display:grid;place-items:center}
+.arrows button:hover{border-color:var(--ink)}
+
+/* split editorial */
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--line)}
+.split .img{position:relative;min-height:520px}
+.split .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .txt{padding:48px;display:flex;flex-direction:column;justify-content:center;gap:18px;min-width:0}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.split h2{font-size:clamp(30px,3.4vw,48px);font-weight:600;letter-spacing:-.035em;line-height:1;margin:0;text-wrap:balance}
+.split p{margin:0;color:var(--muted);max-width:46ch;font-size:16px}
+.specs{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 28px;border-top:1px solid var(--line);padding-top:16px;font-variant-numeric:tabular-nums}
+.specs dt{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.specs dd{margin:0;font-weight:600;font-size:18px}
+.specs div{display:flex;flex-direction:column;gap:2px}
+@media (max-width:900px){.split{grid-template-columns:1fr}.split .img{min-height:0;aspect-ratio:1}.split .txt{padding:28px 20px}}
+#saunas .split .img{min-height:380px}#saunas .split .txt{padding-block:36px}
+@media (max-width:900px){#saunas .split .img{min-height:0;aspect-ratio:16/10}}
+
+
+/* club */
+.club{background:var(--cream);margin-top:88px}
+.club .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-block:72px;align-items:center}
+.club h2{font-size:clamp(30px,3.4vw,48px);font-weight:600;letter-spacing:-.035em;line-height:1;margin:0 0 16px}
+.club p{margin:0 0 22px;color:var(--muted);max-width:48ch;font-size:16px}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.facts div{background:var(--cream);padding:20px;min-width:0}
+.facts dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.facts dd{margin:0;font-size:17px;font-weight:500}
+.facts .big{font-size:34px;font-weight:600;letter-spacing:-.03em;line-height:1}
+@media (max-width:900px){.club .wrap{grid-template-columns:1fr;gap:28px;padding-block:48px}}
+
+/* newsletter */
+.news .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;padding-block:72px;border-bottom:1px solid var(--line)}
+.news h2{font-size:clamp(26px,3vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.02;margin:0;text-wrap:balance}
+.news form{display:flex;gap:8px}
+.news input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:13px 18px;background:var(--bg)}
+.news small{display:block;color:var(--muted);margin-top:10px;font-size:12px}
+@media (max-width:760px){.news .wrap{grid-template-columns:1fr}.news form{flex-direction:column}}
+
+footer .wrap{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px;padding-block:48px;font-size:14px}
+footer h4{margin:0 0 12px;font-size:13px;font-weight:600}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
+footer .logo img{height:56px}
+footer .bot{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr 1fr}footer .wrap>div:first-child{grid-column:1/-1}}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--bg);color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.08);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:40}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<script src="/bag.js"></script>
+<div class="promo"><div class="wrap">We ship all over Europe with FedEx</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#top" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata, House of Human Optimisation"></a>
+  <nav aria-label="Main">
+    <a href="/shop#all">Shop all</a><a href="/shop#massage">Massage</a><a href="/shop#compression">Compression</a><a href="/shop#skin-and-led">Skin &amp; LED</a><a href="/shop#infrared">Infrared</a><a href="/shop#saunas">Saunas</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
+  </nav>
+  <div class="hdr-r">
+    <div class="search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></div>
+
+    <a href="#" class="bag" aria-label="Bag"><svg class="ico" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="bagN">0</b></a>
+  </div>
+</div></header>
+
+<main>
+  <section class="hero" aria-label="Massage. Compress. Recover.">
+    <figure><a class="imglink" href="/product#theragun-mini" aria-label="Theragun Mini"><img src="/img/l-massage-arm.jpg" alt="Woman using a pink Theragun on her arm" style="object-position:center 52%"></a></figure>
+    <div class="hero-txt"><div class="wrap">
+      <div>
+        <h1>Massage.<br>Compress.<br>Recover.</h1>
+        <p>The recovery tech we use every day at Ladata Matosinhos, from massage guns to compression boots. Now for your home.</p>
+      </div>
+      <div class="ctas"><a class="btn solid" href="/shop#all">Shop all</a><a class="btn ghost" href="/shop#saunas">Shop saunas</a></div>
+    </div></div>
+  </section>
+
+  <section class="bf" aria-label="Black Friday"><div class="wrap">
+    <div class="bf-tag">Black Friday</div>
+    <div class="bf-copy">15% off everything<span>Now until 1 December · while stock lasts</span></div>
+    <div class="bf-cd" id="bfcd" aria-label="Time left in the sale"></div>
+    <a href="#">Shop the sale &rarr;</a>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="sh"><h2>Shop by ritual</h2><a href="/shop#all">All products</a></div>
+    <div class="cats">
+      <a class="cat" href="/product#theragun-pro-plus"><div class="t"><img src="/img/theragun-pro-plus.jpg" alt="Theragun PRO Plus"></div><div><b>Massage</b><span>Theragun PRO Plus</span></div></a>
+      <a class="cat" href="/product#jetboots-pro-plus"><div class="t"><img src="/img/jetboots-pro-plus.jpg" alt="JetBoots PRO Plus"></div><div><b>Compression</b><span>JetBoots PRO Plus</span></div></a>
+      <a class="cat" href="/product#thermback-led"><div class="t"><img src="/img/thermback-led.jpg" alt="ThermBack LED"></div><div><b>Hot &amp; cold</b><span>ThermBack LED</span></div></a>
+      <a class="cat" href="/product#theraface-mask-glo"><div class="t"><img src="/img/theraface-mask-glo.jpg" alt="TheraFace Mask Glo"></div><div><b>Skin &amp; LED</b><span>TheraFace Mask Glo</span></div></a>
+      <a class="cat" href="/product#smartgoggles"><div class="t"><img src="/img/smartgoggles.jpg" alt="SmartGoggles"></div><div><b>Sleep</b><span>SmartGoggles</span></div></a>
+      <a class="cat" href="/product#thermneck-and-upper-back"><div class="t"><img src="/img/thermneck-and-upper-back.jpg" alt=""></div><div><b>New in</b><span>ThermNeck &amp; Upper Back</span></div></a>
+    </div>
+  </div></section>
+
+  <section class="block"><div class="wrap">
+    <div class="sh"><h2>Most loved at the club</h2><div class="arrows"><button id="prev" aria-label="Previous"><svg class="ico" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button id="next" aria-label="Next"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
+    <div class="rail" id="rail"></div>
+  </div></section>
+
+  <section class="block" id="saunas"><div class="wrap">
+    <div class="split">
+      <a class="img" href="/product#eco-sauna-vidro"><img src="/img/l-sauna-club.jpg" alt="Two women talking in a sauna" style="object-position:center 22%"></a>
+      <div class="txt">
+        <span class="eyebrow">Saunas · New</span>
+        <h2>Bring the club home.</h2>
+        <p>The Eco-Sauna Vidro is a tempered-glass steam sauna with a 360° view, an internal shower and lighting. It fits a terrace, a garden or an open room, and installs in about three hours.</p>
+        <dl class="specs">
+          <div><dt>People</dt><dd>Up to 6</dd></div>
+          <div><dt>Size</dt><dd>172 × 172 cm</dd></div>
+          <div><dt>Price · excl. VAT</dt><dd data-price="9990">€9,990</dd></div>
+        </dl>
+        <div class="ctas"><a class="btn dark" href="/product#eco-sauna-vidro">Shop Eco-Sauna Vidro</a><a class="btn line" href="/product#eco-sauna-mini-vidro">See the Mini</a></div>
+      </div>
+    </div>
+  </div></section>
+
+
+
+  <section class="club" id="club"><div class="wrap">
+    <div>
+      <span class="eyebrow">The Club</span>
+      <h2 style="margin-top:12px">What is Ladata?</h2>
+      <p>Ladata is the House of Human Optimisation, in Matosinhos. Book a contrast therapy session, moving between sauna and cold plunge, or an infrared session. Come once or become a member.</p>
+      <div class="ctas"><a class="btn dark" href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">Book a session</a><a class="btn line" href="https://www.bookladata.com/" target="_blank" rel="noopener">See memberships</a></div>
+    </div>
+    <dl class="facts">
+      <div><dt>Google rating</dt><dd class="big">4.9</dd></div>
+      <div><dt>Contrast therapy</dt><dd class="big">€30</dd></div>
+      <div><dt>Matosinhos</dt><dd>Rua Tomaz Ribeiro 550</dd></div>
+      <div><dt>Leiria</dt><dd>Coming soon</dd></div>
+    </dl>
+  </div></section>
+
+  <section class="news"><div class="wrap">
+    <h2>Recovery notes, once a month. Early access to drops and sales.</h2>
+    <div>
+      <form id="nf"><label for="email" hidden>Email</label><input id="email" type="email" placeholder="Your email" required><button class="btn dark" type="submit">Subscribe</button></form>
+      <small>No spam. Unsubscribe any time.</small>
+    </div>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><a class="logo" href="#top" aria-label="Back to top"><img src="/img/ladata-logo.png" alt="Ladata, House of Human Optimisation"></a><p style="color:var(--muted);max-width:30ch;margin:8px 0 0">House of Human Optimisation. Matosinhos, with Leiria coming soon.</p></div>
+  <div><h4>Shop</h4><ul><li>All products</li><li>Massage</li><li>Compression</li><li>Skin &amp; LED</li><li>Saunas</li></ul></div>
+  <div><h4>Help</h4><ul><li>Shipping</li><li>Returns</li><li>Warranty</li><li>Contact</li></ul></div>
+  <div><h4>The Club</h4><ul><li>Book a session</li><li>Memberships &amp; packs</li><li>Gift vouchers</li><li>Instagram</li></ul></div>
+  <div class="bot"><span>© 2026 Ladata</span><span>EN · €</span></div>
+</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const eur=n=>'€'+n.toLocaleString('en-IE',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
+// Black Friday: 15% off every price until the sale ends, then prices revert automatically.
+const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
+const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};
+const R=[
+ {n:'Theragun PRO Plus',s:'Heat, LED and vibration massage',p:649,i:'theragun-pro-plus',b:'Best seller'},
+ {n:'JetBoots PRO Plus',s:'Compression, infrared LED and vibration',p:1049,i:'jetboots-pro-plus'},
+ {n:'TheraFace Mask Glo',s:'LED mask with 504 LEDs and massage',p:349,i:'theraface-mask-glo'},
+ {n:'Theragun Sense',s:'Guided-routine massage · 2nd gen',p:299,i:'theragun-sense',b:'New'},
+ {n:'ThermNeck & Upper Back',s:'Percussion, heat and LED',p:349,i:'thermneck-and-upper-back',b:'New'},
+ {n:'SmartGoggles',s:'Eye mask with heat and vibration',p:169,was:209,i:'smartgoggles',b:'Sale'},
+ {n:'Redvion One',s:'Blue-light blocking glasses',p:59.99,was:79.99,i:'redvion-one',b:'Sale'},
+ {n:'JetBoots Prime',s:'Wireless compression boots',p:529,i:'jetboots-prime'},
+ {n:'Theragun Mini Plus',s:'Compact heated massage gun',p:269,i:'theragun-mini-plus'},
+];
+R.forEach(x=>{bfPrice(x);if(BF_ON)x.b='−15%'});
+const QADD='<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Add to bag';
+$('rail').innerHTML=R.map(p=>`<a class="card" href="/product#${p.i}"><div class="t">${p.b?`<span class="badge"${p.b==='Sale'||p.b==='−15%'?' style="color:var(--sale)"':''}>${p.b}</span>`:''}<img class="${p.cover?'cover':''}" src="/img/${p.i}.jpg" alt="${p.n}" loading="lazy"></div><div><div class="nm">${p.n}</div><div class="sub">${p.s}</div><div class="pr">${p.was?`<span class="now">${eur(p.p)}</span><s>${eur(p.was)}</s>`:eur(p.p)}<span class="vat">VAT not included</span></div><button class="qadd" type="button" data-add="${R.indexOf(p)}" aria-label="Add ${p.n} to bag">${QADD}</button></div></a>`).join('');
+const step=()=>$('rail').querySelector('.card').offsetWidth+12;
+$('prev').onclick=()=>$('rail').scrollBy({left:-step(),behavior:'smooth'});
+$('next').onclick=()=>$('rail').scrollBy({left:step(),behavior:'smooth'});
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._h);e._h=setTimeout(()=>e.classList.remove('on'),2000)}
+$('rail').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(b){e.preventDefault();const x=R[+b.dataset.add];LadataBag.add({slug:x.i,n:x.n,s:x.s,p:x.p,was:x.was},b)}});
+$('nf').addEventListener('submit',e=>{e.preventDefault();toast('Thanks. This is a mock-up, nothing was sent.');e.target.reset()});
+document.addEventListener('click',e=>{if(e.target.closest('a.logo')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});return}if(e.target.closest('a[href="#"]'))e.preventDefault()});
+function bf(){const t=BF_END-Date.now(),e=$('bfcd');
+  if(t<=0){e.textContent='Ended';return}
+  const d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60;
+  e.innerHTML=[[d,'d'],[h,'h'],[m,'m']].map(([v,l])=>`<span>${String(v).padStart(2,'0')}<small>${l}</small></span>`).join('<i>·</i>')}
+bf();setInterval(bf,30000);
+document.querySelectorAll('[data-price]').forEach(e=>{const x={p:+e.dataset.price};bfPrice(x);if(x.was)e.innerHTML=`${eur(x.p)} <s style="opacity:.55;font-weight:400">${eur(x.was)}</s>`});
+</script>
+</body>
+</html>

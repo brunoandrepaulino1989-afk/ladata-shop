@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ladata</title>
+<meta name="description" content="Recovery tech from Ladata, the House of Human Optimisation: massage guns, compression boots, LED and saunas. Shipped all over Europe.">
+<link rel="icon" type="image/png" href="/img/ladata-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: On-style product page. Two-column: image gallery left (2-up grid), sticky buy panel right with accordions. Then a club band and a "complete your routine" rail. All white. */
+:root{
+  --bg:#ffffff;
+  --ink:#111111;
+  --muted:#6b6b6b;
+  --line:#e3e3e1;
+  --soft:#f5f5f5;
+  --cream:#f6f1e7;
+  --red:#b0141f;
+  --sale:#c8381e;
+  --ok:#2f7a4a;
+  --font:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1600px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+img{display:block}
+
+.promo{color:var(--muted);text-align:center;font-size:13px;border-bottom:1px solid var(--line)}
+.promo .wrap{padding-block:9px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:32px;height:64px}
+.logo{display:block;flex:0 0 auto}
+.logo img{height:34px;width:auto}
+nav{display:flex;gap:26px;font-size:15px;font-weight:500}
+nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:14px}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--muted)}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;flex:0 0 auto}
+.bag{position:relative}
+.bag b{position:absolute;top:-6px;right:-9px;border:1px solid var(--ink);background:var(--bg);font-size:10px;border-radius:9px;min-width:16px;height:16px;display:grid;place-items:center;padding:0 4px}
+nav a{white-space:nowrap}
+@media (max-width:1180px){nav{gap:18px}.search span{display:none}}
+@media (max-width:900px){header .wrap{flex-wrap:wrap;height:auto;padding-block:12px 0;row-gap:4px}nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;gap:22px;padding:8px 0 12px;font-size:14px}nav::-webkit-scrollbar{display:none}}
+
+.crumbs{font-size:13px;color:var(--muted);padding-block:18px;display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a:hover{color:var(--ink)}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap}
+.pnav{display:flex;align-items:center;gap:6px;font-size:13px}
+.pnav a{display:flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap;max-width:220px}
+.pnav a:hover{border-color:var(--ink)}
+.pnav a span{overflow:hidden;text-overflow:ellipsis}
+.pnav .ico{width:16px;height:16px}
+.pnav select{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:var(--bg);color:var(--ink);max-width:200px}
+@media (max-width:700px){.pnav{width:100%;margin-top:-8px;padding-bottom:10px}.pnav select{flex:1;min-width:0;max-width:none}.pnav a span{display:none}}
+
+/* main */
+.pdp{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+.gallery{position:sticky;top:calc(env(safe-area-inset-top,0px) + 88px);min-width:0}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border:1px solid var(--line);height:clamp(280px,calc(100svh - 330px),540px)}
+.gal::-webkit-scrollbar{display:none}
+.gal figure{margin:0;position:relative;flex:0 0 100%;scroll-snap-align:start;overflow:hidden;background:var(--bg)}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal img.contain{object-fit:contain;padding:8%}
+.gallery .badge{position:absolute;top:14px;left:14px;font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--line);padding:3px 8px;z-index:2}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;cursor:pointer}
+.arrow.prev{left:14px}.arrow.next{right:14px}
+.arrow[disabled]{opacity:.35;cursor:default}
+.thumbs{display:flex;gap:8px;margin-top:10px;align-items:center}
+.thumbs button{width:64px;height:64px;border:1px solid var(--line);background:var(--bg);padding:0;cursor:pointer;position:relative;overflow:hidden;flex:0 0 auto}
+.thumbs button img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thumbs button img.contain{object-fit:contain;padding:6px}
+.thumbs button[aria-current="true"]{border-color:var(--ink)}
+.thumbs .count{margin-left:auto;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.mbar{display:none}
+@media (max-width:700px){.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;gap:12px;background:var(--bg);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(110%);transition:transform .25s}
+.mbar.on{transform:none}.mbar div{flex:1;min-width:0;font-size:14px}.mbar b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mbar button{border:0;border-radius:999px;padding:12px 20px;font-weight:600;background:var(--ink);color:#fff;cursor:pointer}.mbar button[disabled]{background:var(--soft);color:var(--muted)}}
+
+.buy{position:sticky;top:calc(env(safe-area-inset-top,0px) + 88px);display:flex;flex-direction:column;gap:14px;min-width:0}
+.cat{font-size:13px;color:var(--muted)}
+.buy h1{font-size:clamp(28px,2.6vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1.02;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:16px;margin-top:-10px}
+.price{font-size:20px;font-variant-numeric:tabular-nums;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.price s{color:var(--muted);font-size:16px}
+.price .now{color:var(--sale)}
+.price small{font-size:13px;color:var(--muted)}
+.lead{margin:0;font-size:15.5px;max-width:52ch}
+.opts{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.opts b{color:var(--ink);font-weight:600}
+.stock{display:flex;gap:8px;align-items:center;font-size:14px}
+.stock i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.stock.out i{background:var(--muted)}
+.add{display:flex;gap:8px}
+.add button{flex:1;border:0;border-radius:999px;padding:16px;font-weight:600;font-size:16px;background:var(--ink);color:#fff;cursor:pointer}
+.add button[disabled]{background:var(--soft);color:var(--muted);cursor:not-allowed}
+.add .wish{flex:0 0 54px;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.add .wish[aria-pressed="true"] svg{fill:var(--ink)}
+.perks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.perks li{display:flex;gap:10px;align-items:center}
+.try{background:var(--cream);padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.try b{display:block;font-weight:600}
+.try a{border-bottom:1px solid var(--ink);font-weight:500;white-space:nowrap}
+
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-weight:600}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-weight:400;font-size:20px;line-height:1}
+.acc details[open] summary::after{content:"−"}
+.acc .in{padding:0 0 18px;color:var(--muted);font-size:14.5px}
+.acc .in p{margin:0 0 10px;max-width:56ch}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;margin:0;font-size:14px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0;color:var(--ink)}
+@media (max-width:700px){.pdp{grid-template-columns:1fr;gap:24px}.buy{position:static}.gallery{position:relative;top:0}.gal{height:min(44svh,380px)}.thumbs button{width:44px;height:44px}.buy .lead{display:none}.buy{gap:14px}.pdp{gap:18px}.thumbs{margin-top:8px}}
+@media (min-width:701px) and (max-width:900px){.pdp{gap:24px}.buy .lead{display:none}.gal{height:clamp(260px,calc(100svh - 300px),420px)}}
+@media (max-width:560px){.arrow{display:none}.gal{height:min(32svh,250px)}.buy .cat{display:none}.thumbs button{width:44px;height:44px}}
+
+/* club band */
+.band{margin-top:88px;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.band .img{position:relative;min-height:440px}
+.band .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band .txt{padding:48px;display:flex;flex-direction:column;justify-content:center;gap:16px;min-width:0}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.band h2{font-size:clamp(28px,3vw,42px);font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
+.band p{margin:0;color:var(--muted);max-width:46ch;font-size:16px}
+.btn{display:inline-block;align-self:flex-start;border-radius:999px;padding:13px 22px;font-weight:600;font-size:15px;border:1px solid var(--ink);background:var(--ink);color:#fff}
+@media (max-width:900px){.band{grid-template-columns:1fr}.band .img{min-height:0;aspect-ratio:4/3}.band .txt{padding:28px 20px}}
+.band .img img.zoom{transform:scale(1.7);transform-origin:52% 40%}
+.bfb{margin-top:72px;background:var(--red);color:#fff;display:flex;align-items:center;gap:14px 28px;padding:18px 28px;flex-wrap:wrap}
+.bfb .tag{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding-right:28px;border-right:1px solid rgba(255,255,255,.35);white-space:nowrap}
+.bfb .mid{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;flex:1;min-width:0}
+.bfb h2{font-size:18px;font-weight:500;letter-spacing:-.01em;line-height:1.2;margin:0}
+.bfb p{margin:0;font-size:13px;opacity:.75}
+.bfb .r{display:flex;align-items:center;gap:28px}
+.bfb .cd{display:flex;align-items:baseline;gap:4px;font-size:15px;font-variant-numeric:tabular-nums}
+.bfb .cd small{font-size:11px;opacity:.7;margin-left:1px}.bfb .cd i{font-style:normal;opacity:.45;margin:0 4px}
+.bfb a{color:#fff;font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;white-space:nowrap}
+.bfb a:hover{border-color:#fff}
+@media (max-width:900px){.bfb{padding:16px 18px;gap:10px 20px}.bfb .tag{border:0;padding:0;width:100%}.bfb .r{width:100%;justify-content:space-between}}
+
+/* rail */
+.more{padding-block:72px}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px}
+.sh h2{font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1;margin:0}
+.sh a{font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .t{aspect-ratio:1;border:1px solid var(--line);position:relative;overflow:hidden}
+.card .t img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6%;transition:transform .5s ease}
+.card .t img.cover{object-fit:cover;padding:0}
+.card:hover .t img{transform:scale(1.04)}
+.nm{font-weight:600}
+.cs{color:var(--muted);font-size:14px}
+.pr{font-variant-numeric:tabular-nums}
+.vat{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:2px}
+
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-block:32px;color:var(--muted);font-size:13px}
+footer .logo img{height:28px}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--bg);color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.08);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:40}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<script src="/bag.js"></script>
+<div class="promo"><div class="wrap">We ship all over Europe with FedEx</div></div>
+<header><div class="wrap">
+  <a class="logo" href="/" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata, House of Human Optimisation"></a>
+  <nav aria-label="Main">
+    <a href="/shop#all">Shop all</a><a href="/shop#massage">Massage</a><a href="/shop#compression">Compression</a><a href="/shop#skin-and-led">Skin &amp; LED</a><a href="/shop#infrared">Infrared</a><a href="/shop#saunas">Saunas</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
+  </nav>
+  <div class="hdr-r">
+    <div class="search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></div>
+
+    <a href="#" class="bag" aria-label="Bag"><svg class="ico" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="bagN">0</b></a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="topbar"><div class="crumbs" id="crumbs"></div><div class="pnav" id="pnav"></div></div>
+  <div class="pdp">
+    <div class="gallery" id="gallery"></div>
+    <aside class="buy" id="buy"></aside>
+  </div>
+
+  <section class="band" id="band"></section>
+
+  <section class="more">
+    <div class="sh"><h2>Complete your routine</h2><a href="/shop">All products</a></div>
+    <div class="grid" id="more"></div>
+  </section>
+</main>
+
+<footer><div class="wrap"><a class="logo" href="/" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata"></a><span>House of Human Optimisation</span><span>© 2026 Ladata</span></div></footer>
+<div class="mbar" id="mbar"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const CH={mass:'massage',comp:'compression',heat:'hot-and-cold',skin:'skin-and-led',sleep:'sleep',sauna:'saunas',care:'body-care'};
+const CAT={mass:'Massage',comp:'Compression',heat:'Hot & cold',skin:'Skin & LED',sleep:'Sleep',sauna:'Saunas',care:'Body care'};
+const P=[
+ {n:'Theragun PRO Plus',c:'mass',s:'Heat, LED and vibration massage',p:649,d:'Therabody’s most complete massage gun. It combines percussive, LED, vibration and heated percussive therapy. Cold therapy is available as a separate attachment.'},
+ {n:'Theragun Prime Plus',c:'mass',s:'Heated massage gun',p:419,d:'A massage gun with heated percussive therapy, for faster warm-ups, recovery and relief.'},
+ {n:'Theragun Prime',c:'mass',s:'Deep tissue massage · 6th gen',p:319,neu:1,d:'A deep tissue massage gun that uses percussive therapy to relieve discomfort and tension.'},
+ {n:'Theragun Sense',c:'mass',s:'Guided-routine massage · 2nd gen',p:299,neu:1,d:'A massage gun that pairs percussive therapy with guided routines on its screen, for muscle relief after a workout.'},
+ {n:'Theragun Mini Plus',c:'mass',s:'Compact heated massage gun',p:269,d:'A heated, travel-sized massage gun that activates muscles, eases soreness and speeds up recovery.'},
+ {n:'Theragun Mini',c:'mass',s:'Compact massage gun · 3rd gen',p:219,opts:'Available in <b>Black</b> and <b>Desert Rose</b>',d:'A compact, lightweight massage gun for relief from aches, tension and stress, wherever you are. Small enough for a gym bag or carry-on.'},
+ {n:'Theragun Relief',c:'mass',s:'Gentle everyday massage',p:149,opts:'Available in <b>Navy</b> and <b>Sand</b>',d:'A lightweight, gentle percussion massager for easing everyday aches, tension and stiffness.'},
+ {n:'JetBoots PRO Plus',c:'comp',s:'Compression, infrared LED and vibration',p:1049,opts:'Sizes <b>Short</b>, <b>Regular</b> and <b>Long</b>',d:'Three-in-one recovery boots that combine pneumatic compression, infrared LED and vibration therapy. The same boots we use in the Recovery Room.'},
+ {n:'JetBoots Prime',c:'comp',s:'Wireless compression boots',p:529,opts:'Sizes <b>Short</b>, <b>Regular</b> and <b>Long</b>',d:'Lightweight, portable and wireless compression boots that help ease soreness after training, almost anywhere.'},
+ {n:'RecoveryPulse Arm',c:'comp',s:'Compression sleeve with vibration',p:159,opts:'Sizes <b>XS</b> to <b>XL</b>',d:'A compression sleeve with vibration that speeds up recovery and relieves minor aches without slowing you down.'},
+ {n:'RecoveryPulse Calf',c:'comp',s:'Calf compression sleeve with vibration',p:159,neu:1,d:'A calf compression sleeve with built-in vibration, for relief on the go.'},
+ {n:'ThermNeck & Upper Back',c:'heat',s:'Percussion, heat and LED',p:349,neu:1,d:'A wearable neck and upper-back massager that combines Theragun percussion with heat and near-infrared LED light.'},
+ {n:'ThermBack LED',c:'heat',s:'Lower back: heat, infrared and vibration',p:269,d:'Wearable heat, infrared, vibration and LED therapy for lower-back relief.'},
+ {n:'RecoveryTherm Cube',c:'heat',s:'Hot and cold contrast therapy',p:null,d:'Handheld contrast therapy: switch between hot and cold to support recovery after training.'},
+ {n:'Neck & Chest LED',c:'skin',s:'Hands-free LED for neck and chest',p:399,neu:1,d:'A hands-free LED device for the neck and chest.'},
+ {n:'SkinSpa PRO',c:'skin',s:'Complete anti-ageing facial system',p:399,neu:1,d:'SkinSpa PRO combines several spa facial routines in one complete anti-ageing system.'},
+ {n:'TheraFace Mask Glo',c:'skin',s:'LED mask with 504 LEDs and massage',p:349,d:'A clinically proven LED light mask with 504 LEDs and built-in massage, for radiant skin.'},
+ {n:'SkinSpa CryoCurrent',c:'skin',s:'Cold microcurrent to lift and depuff',p:299,neu:1,d:'Cold microcurrent that is clinically proven to lift, firm and contour while depuffing.'},
+ {n:'SkinSpa ThermLED',c:'skin',s:'Facial LED with heated massage',p:199,d:'A handheld four-wavelength LED facial tool for lines, uneven tone, redness and blemishes, with heated massage to help serums absorb.'},
+ {n:'ThermFace Massage',c:'skin',s:'Heated percussive facial massage',p:199,d:'A portable, heated percussive facial massager that eases jaw tension and relaxes the face and neck.'},
+ {n:'TheraFace Depuffing Wand',c:'skin',s:'Depuffing on the go',p:149,opts:'Available in <b>White</b> and <b>Indigo</b>',d:'A portable wand for reducing puffiness, at home or on the go.'},
+ {n:'Redvion One',c:'sleep',s:'Blue-light blocking glasses',p:59.99,was:79.99,neu:1,d:'Glasses for people who want to sleep and recover better. They block 98% of screen blue light, help the body produce melatonin and reduce eye strain. Lightweight TR90 frames.'},
+ {n:'SmartGoggles',c:'sleep',s:'Eye mask with heat and vibration · 2nd gen',p:169,was:209,d:'The redesigned SmartGoggles have a 100% blackout design and more comfort, with heat and vibration to help you switch off.'},
+ {n:'Eco-Sauna Vidro',c:'sauna',s:'Glass steam sauna for up to 6 people',p:9990,cover:1,neu:1,note:'Installation not included',main:'eco-sauna-vidro-r.jpg',g:[['eco-sauna-vidro-4.jpg','Eco-Sauna Vidro on a wooden deck by a golf course'],['eco-sauna-vidro-5.jpg','Eco-Sauna Vidro lit at night under frangipani trees'],['eco-sauna-vidro-6.jpg','Eco-Sauna Vidro in a garden overlooking the city']],d:'A tempered-glass steam sauna with a 360° view, designed to blend into a garden, a terrace or an open space. It comes with an internal shower and interior lighting, and installation takes about three hours.',f:[['Size','172 × 172 × 180 cm (W × D × H)'],['Weight','380 kg'],['Capacity','Up to 6 people'],['Heater','Electric steam generator, 3,500 W, 220 V'],['Glass','8 mm tempered, smoked, green or clear'],['Wood','Treated Lyptus, Paraju or similar']]},
+ {n:'Eco-Sauna Mini Vidro',c:'sauna',s:'Compact glass steam sauna for up to 3 people',p:6990,cover:1,neu:1,note:'Installation not included',main:'eco-sauna-mini-vidro-r.jpg',g:[['eco-sauna-mini-vidro-4.jpg','Eco-Sauna Mini Vidro lit up on a garden deck at dusk'],['eco-sauna-mini-vidro-5.jpg','Eco-Sauna Mini Vidro in green glass on a deck among palms'],['eco-sauna-mini-vidro-6.jpg','Eco-Sauna Mini Vidro in frosted glass inside a bathroom'],['eco-sauna-mini-vidro-7.jpg','Eco-Sauna Mini Vidro on a garden lawn']],d:'The compact version of the Eco-Sauna, made for balconies, terraces, small gardens and indoor spaces. Tempered glass, an internal shower and interior lighting, for up to 3 people. Installed in about 3 hours.',f:[['Height','180 cm'],['Width','172 cm'],['Depth','100 cm'],['Weight','290 kg'],['Installation time','3 hours'],['Capacity','Up to 3 people'],['Warranty','3 years'],['Current','20 A'],['Voltage','220 V'],['Power','3,500 W']]},
+ {n:'Ladata Body Oil',c:'care',s:'Muscles & Mind Recovery',p:20,main:'ladata-body-oil-w.jpg',neu:1,d:'Our own body oil, made for the end of a recovery session. Massage it into warm muscles after the sauna or a massage gun session.',f:[['Made by','Ladata'],['Values','Zero-waste, vegan, cruelty-free']]},
+];
+// Black Friday: 15% off every price until the sale ends, then prices revert automatically.
+const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
+const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};
+P.forEach(x=>{bfPrice(x);x.slug=x.n.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/-$/,'')});
+const LIFE={mass:[['l-massage-arm.jpg','Massage gun on the arm'],['l-massage-knee.jpg','Massage gun on the leg']],comp:[['l-compression.jpg','Compression boots in the Recovery Room'],['l-jetboots-chair.jpg','JetBoots on a lounger']],care:[['l-oil-bowl.jpg','Ladata Body Oil with palo santo'],['l-oil-shelf.jpg','Ladata Body Oil bottles']]};
+const BAND={
+ mass:['l-massage-knee.jpg','Use it like we do','Two minutes per muscle group after the sauna, slow passes, light pressure. Ask for a demo at the club before you buy.'],
+ comp:['l-compression.jpg','Straight from the Recovery Room','JetBoots are part of every Recovery Room session at Ladata Matosinhos. Try a session and feel the difference in your legs.'],
+ care:['l-oil-shelf.jpg','Made at the House of Human Optimisation','The same oil we keep on the shelf at the club, for the last ten minutes of your recovery.'],
+ sauna:['l-infrared.jpg','Bring the club home','Contrast therapy starts with heat. Try a session at Ladata before choosing the sauna for your home.'],
+ def:['l-infrared.jpg','Try it at Ladata first','Book a contrast therapy or infrared session in Matosinhos and test our recovery tools on site.'],
+};
+const $=id=>document.getElementById(id);
+const eur=n=>'€'+n.toLocaleString('en-IE',{minimumFractionDigits:n%1?2:0});
+let wish=new Set();
+function render(){
+  const slug=(location.hash||'').slice(1);
+  const p=P.find(x=>x.slug===slug)||P.find(x=>x.slug==='theragun-mini');
+  document.title=p.n+' · Ladata';
+  const k=P.indexOf(p),prv=P[(k-1+P.length)%P.length],nxt=P[(k+1)%P.length];
+  $('pnav').innerHTML=`<a href="#${prv.slug}" aria-label="Previous product: ${prv.n}"><svg class="ico" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg><span>${prv.n}</span></a><select id="jump" aria-label="Jump to product">${P.map((x,j)=>`<option value="${x.slug}"${x===p?' selected':''}>${j+1}/${P.length} · ${x.n}</option>`).join('')}</select><a href="#${nxt.slug}" aria-label="Next product: ${nxt.n}"><span>${nxt.n}</span><svg class="ico" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></a>`;
+  $('jump').onchange=e=>{location.hash=e.target.value};
+  $('crumbs').innerHTML=`<a href="/">Home</a><span>/</span><a href="/shop">All products</a><span>/</span><a href="/shop#${CH[p.c]}">${CAT[p.c]}</a><span>/</span><span style="color:var(--ink)">${p.n}</span>`;
+  const badge=p.out?'Sold out':p.was?(BF_ON?'−15%':'Sale'):p.neu?'New':'';
+  const imgs=[[p.main||`${p.slug}.jpg`,p.n,p.main?true:!p.cover]].concat((p.g||[]).concat(LIFE[p.c]||[]).map(([f,a])=>[f,a,false]));
+  const arr=d=>`<svg class="ico" viewBox="0 0 24 24"><path d="${d}"/></svg>`;
+  $('gallery').innerHTML=`${badge?`<span class="badge"${badge==='Sale'||badge==='−15%'?' style="color:var(--sale)"':''}>${badge}</span>`:''}<div class="gal" id="gal" tabindex="0" aria-label="${p.n} images">${imgs.map(([f,a,contain],i)=>`<figure><img class="${contain?'contain':''}" src="/img/${f}" alt="${a}"${i?' loading="lazy"':''}></figure>`).join('')}</div>${imgs.length>1?`<button class="arrow prev" aria-label="Previous image">${arr('m15 5-7 7 7 7')}</button><button class="arrow next" aria-label="Next image">${arr('m9 5 7 7-7 7')}</button>`:''}<div class="thumbs">${imgs.length>1?imgs.map(([f,a,contain],i)=>`<button data-i="${i}" aria-label="Image ${i+1}"><img class="${contain?'contain':''}" src="/img/${f}" alt=""></button>`).join(''):''}<span class="count" id="count"></span></div>`;
+  const gal=$('gal'),n=imgs.length,cur=()=>Math.round(gal.scrollLeft/gal.clientWidth);
+  const go=i=>gal.scrollTo({left:Math.max(0,Math.min(n-1,i))*gal.clientWidth,behavior:'smooth'});
+  const sync=()=>{const i=cur();$('count').textContent=n>1?`${i+1} / ${n}`:'';document.querySelectorAll('.thumbs button').forEach((b,j)=>b.setAttribute('aria-current',j===i));const pv=document.querySelector('.arrow.prev'),nx=document.querySelector('.arrow.next');if(pv){pv.disabled=i===0;nx.disabled=i===n-1}};
+  gal.addEventListener('scroll',()=>requestAnimationFrame(sync));sync();
+  document.querySelectorAll('.thumbs button').forEach(b=>b.onclick=()=>go(+b.dataset.i));
+  const pv=document.querySelector('.arrow.prev');if(pv){pv.onclick=()=>go(cur()-1);document.querySelector('.arrow.next').onclick=()=>go(cur()+1)}
+  gal.onkeydown=e=>{if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)};
+  const price=p.p==null?'<span style="color:var(--muted)">Price to be confirmed</span>':p.was?`<span class="now">${eur(p.p)}</span><s>${eur(p.was)}</s><small>VAT not included</small>`:`${eur(p.p)}<small>VAT not included</small>`;
+  const facts=[['Category',CAT[p.c]]].concat(p.f||[]);
+  $('buy').innerHTML=`
+    <span class="cat">${CAT[p.c]}${p.c==='care'?' · Made by Ladata':''}</span>
+    <h1>${p.n}</h1>
+    <div class="sub">${p.s}</div>
+    <div class="price">${price}</div>
+    <p class="lead">${p.d}</p>
+    ${p.opts?`<div class="opts">${p.opts}</div>`:''}
+    <div class="stock${p.out?' out':''}"><i></i>${p.out?'Sold out · we will email you when it is back':'In stock · ships in 1–2 working days'}</div>
+    <div class="add"><button id="addBtn">Add to bag</button><button class="wish" id="wishBtn" aria-pressed="${wish.has(p.slug)}" aria-label="Save ${p.n}"><svg class="ico" viewBox="0 0 24 24" style="margin:auto"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+    <ul class="perks">
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>${p.note?p.note+' · delivery arranged with you':'Shipping €9.90 + VAT across Portugal'}</li>
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>30-day returns</li>
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg>${((p.f||[]).find(x=>x[0]==='Warranty')||[,'2 years'])[1].replace(/ years?/,'-year')} warranty</li>
+    </ul>
+    <div class="try"><div><b>Try it at Ladata Matosinhos</b>Book a session and test it before you buy.</div><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">Book</a></div>
+    <div class="acc">
+      <details><summary>Description</summary><div class="in"><p>${p.d}</p>${p.opts?`<p>${p.opts.replace(/<\/?b>/g,'')}.</p>`:''}</div></details>
+      <details${p.f&&p.f.length>4?' open':''}><summary>${p.c==='sauna'?'Technical specifications':'Details'}</summary><div class="in"><dl class="facts">${facts.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></div></details>
+      <details><summary>Shipping &amp; returns</summary><div class="in"><p>${p.note?'Delivery and installation are arranged with you after the order. ':''}Orders ship from Porto within 1–2 working days. Shipping is €9.90 + VAT on every order in Portugal.</p><p>Changed your mind? Return unused products within 30 days.</p></div></details>
+    </div>`;
+  const b=BAND[p.c]||BAND.def;
+  $('band').className='bfb';
+  {const t=Math.max(0,BF_END-Date.now()),d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60;
+  $('band').innerHTML=`<span class="tag">Black Friday</span><div class="mid"><h2>15% off everything</h2><p>Now until 1 December · while stock lasts</p></div><div class="r"><div class="cd" aria-label="Time left in the sale">${d}<small>d</small><i>·</i>${String(h).padStart(2,'0')}<small>h</small><i>·</i>${String(m).padStart(2,'0')}<small>m</small></div><a href="/shop#${CH[p.c]}">Shop the sale &rarr;</a></div>`}
+  const same=P.filter(x=>x.c===p.c&&x!==p&&x.c!=='sauna'),other=P.filter(x=>x.c!==p.c&&x.c!=='sauna'&&!x.out);
+  const pick=same.slice(0,2).concat(other.filter((_,i)=>i%5===P.indexOf(p)%5)).slice(0,4);
+  while(pick.length<4){const x=other.find(o=>!pick.includes(o));if(!x)break;pick.push(x)}
+  $('more').innerHTML=pick.map(x=>`<a class="card" href="#${x.slug}"><div class="t"><img class="${x.cover?'cover':''}" src="/img/${x.slug}.jpg" alt="${x.n}" loading="lazy"></div><div><div class="nm">${x.n}</div><div class="cs">${x.s}</div><div class="pr">${x.p==null?'Price to be confirmed':x.was?`<span style="color:var(--sale)">${eur(x.p)}</span> <s style="color:var(--muted)">${eur(x.was)}</s>`:eur(x.p)}${x.p==null?'':'<span class="vat">VAT not included</span>'}</div></div></a>`).join('');
+  $('mbar').innerHTML=`<div><b>${p.n}</b>${p.p==null?'Price to be confirmed':eur(p.p)+(p.was?` <s style="color:var(--muted)">${eur(p.was)}</s>`:'')+' <small style="color:var(--muted)">excl. VAT</small>'}</div><button id="mAdd">Add to bag</button>`;
+  if(window._io)window._io.disconnect();window._io=new IntersectionObserver(([en])=>$('mbar').classList.toggle('on',!en.isIntersecting));window._io.observe($('addBtn'));
+  $('mAdd').onclick=()=>$('addBtn').click();
+  $('addBtn').onclick=()=>LadataBag.add(p,$('addBtn'));
+  $('wishBtn').onclick=e=>{wish.has(p.slug)?wish.delete(p.slug):wish.add(p.slug);e.currentTarget.setAttribute('aria-pressed',wish.has(p.slug))};
+}
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._h);e._h=setTimeout(()=>e.classList.remove('on'),2000)}
+document.addEventListener('click',e=>{if(e.target.closest('a[href="#"]'))e.preventDefault()});
+document.addEventListener('keydown',e=>{if(e.target.closest('input,select,textarea,.gal'))return;const k=P.findIndex(x=>x.slug===(location.hash.slice(1)||'theragun-mini'));if(e.key==='ArrowRight')location.hash=P[(k+1)%P.length].slug;if(e.key==='ArrowLeft')location.hash=P[(k-1+P.length)%P.length].slug});
+window.addEventListener('hashchange',()=>{render();window.scrollTo({top:0})});
+render();
+</script>
+</body>
+</html>

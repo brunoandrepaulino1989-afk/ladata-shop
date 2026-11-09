@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shop all · Ladata</title>
+<meta name="description" content="Recovery tech from Ladata, the House of Human Optimisation: massage guns, compression boots, LED and saunas. Shipped all over Europe.">
+<link rel="icon" type="image/png" href="/img/ladata-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: On-style listing. White page, big left title, category pills, filter drawer, 4-col grid of square grey tiles with name/subtitle/price under. */
+:root{
+  --bg:#ffffff;
+  --tile:#ffffff;
+  --soft:#f5f5f5;
+  --cream:#f6f1e7;
+  --ink:#111111;
+  --muted:#6b6b6b;
+  --line:#e3e3e1;
+  --sale:#c8381e;
+  --red:#b0141f;
+  --font:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1600px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:900px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+a{color:inherit;text-decoration:none}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.promo{background:var(--bg);color:var(--muted);text-align:center;font-size:13px;border-bottom:1px solid var(--line)}
+.promo .wrap{padding-block:9px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:32px;height:64px}
+.logo{display:block;flex:0 0 auto}
+.logo img{height:34px;width:auto;display:block}
+nav{display:flex;gap:26px;font-size:15px;font-weight:500}
+nav a:hover,nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px}
+.hdr-r{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:14px}
+.search{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--muted);min-width:0}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+.bag{position:relative}
+.bag b{position:absolute;top:-6px;right:-9px;background:var(--bg);color:var(--ink);border:1px solid var(--ink);font-size:10px;border-radius:9px;min-width:16px;height:16px;display:grid;place-items:center;padding:0 4px}
+nav a{white-space:nowrap}
+@media (max-width:1180px){nav{gap:18px}.search span{display:none}}
+@media (max-width:900px){header .wrap{flex-wrap:wrap;height:auto;padding-block:12px 0;row-gap:4px}nav{order:3;width:100%;overflow-x:auto;scrollbar-width:none;gap:22px;padding:8px 0 12px;font-size:14px}nav::-webkit-scrollbar{display:none}}
+
+.head{padding-block:40px 20px}
+h1{font-size:clamp(32px,4.4vw,56px);font-weight:600;letter-spacing:-.03em;line-height:1;margin:0}
+.bf{margin-top:28px;background:var(--red);color:#fff;display:flex;align-items:center;gap:28px;padding:16px 24px;flex-wrap:wrap}
+.bf-tag{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding-right:28px;border-right:1px solid rgba(255,255,255,.35);white-space:nowrap}
+.bf-copy{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;min-width:0;flex:1}
+.bf-copy b{font-size:17px;font-weight:500;letter-spacing:-.01em}
+.bf-copy span{font-size:13px;opacity:.75}
+.bf-right{display:flex;align-items:center;gap:28px}
+.bf-cd{display:flex;align-items:baseline;gap:4px;font-size:15px;font-weight:400;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.bf-cd i{font-style:normal;opacity:.45;margin:0 2px}
+.bf-cd small{font-size:11px;opacity:.7;margin-left:1px}
+.bf a{color:#fff;font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;white-space:nowrap;transition:border-color .2s}
+.bf a:hover{border-color:#fff}
+@media (max-width:900px){.bf{gap:10px 20px;padding:16px 18px}.bf-tag{border:0;padding:0;width:100%}.bf-right{width:100%;justify-content:space-between}}
+h1 sup{font-size:.32em;font-weight:500;color:var(--muted);vertical-align:top;margin-left:6px;letter-spacing:0}
+
+.cats{display:flex;gap:10px;overflow-x:auto;padding-block:20px 4px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:0 0 auto;display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 16px 5px 5px;cursor:pointer;font-size:14px;font-weight:500}
+.cat .th{width:34px;height:34px;border-radius:50%;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center}
+.cat .th svg{width:22px;height:22px}
+.cat[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.cat:hover{border-color:var(--ink)}
+
+.bar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px);z-index:4;background:var(--bg)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.count{color:var(--muted);font-size:14px}
+.fbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 16px;background:var(--bg);cursor:pointer;font-weight:500;font-size:14px}
+.fbtn:hover{border-color:var(--ink)}
+.fbtn i{font-style:normal;border:1px solid var(--ink);border-radius:9px;font-size:11px;padding:0 6px}
+
+.grid{display:grid;grid-auto-flow:row dense;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 12px;padding-block:8px 72px}
+@media (max-width:1180px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 8px}}
+
+.card{display:flex;flex-direction:column;gap:10px;min-width:0;cursor:pointer}
+.tile{position:relative;aspect-ratio:1;max-width:100%;background:var(--tile);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.tile svg.art{width:46%;height:46%;stroke:var(--ink);fill:none;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;opacity:.82;transition:transform .5s ease}
+.card:hover .tile svg.art,.card:hover .tile img{transform:scale(1.04)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6%;transition:transform .5s ease}
+.tile img.cover{object-fit:cover;padding:0}
+.note{color:var(--muted);font-size:12px}
+.ph{position:absolute;bottom:10px;right:12px;font-size:11px;color:var(--muted)}
+.badge{position:absolute;top:12px;left:12px;font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:2px}
+.badge.sale{color:var(--sale)}
+.badge.out{color:var(--muted);font-weight:500}
+.wish{position:absolute;top:8px;right:8px;width:34px;height:34px;border:0;background:transparent;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.wish:hover{background:var(--bg)}
+.wish[aria-pressed="true"] svg{fill:var(--ink)}
+.sws{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted);height:16px}
+.sw{width:12px;height:12px;border-radius:50%;border:1px solid var(--line)}
+.info{display:flex;flex-direction:column;gap:2px;padding-right:4px}
+.nm{font-weight:600;font-size:15px}
+.sub{color:var(--muted);font-size:14px}
+.pr{font-size:15px;margin-top:4px;font-variant-numeric:tabular-nums}
+.pr s{color:var(--muted);margin-left:6px}
+.pr .now{color:var(--sale)}
+.vat{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:2px}
+.qadd{margin-top:8px;width:100%;border:1px solid var(--ink);border-radius:999px;padding:10px 14px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,color .2s}
+.qadd:hover{background:#fff;color:var(--ink)}
+.qadd.ok{background:#fff;color:var(--ink)}
+.qadd svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+.feature{grid-column:-2/-1;grid-row:span 2;background:var(--cream);color:var(--ink);display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.feature .fimg{position:relative;flex:1;min-height:320px}
+.feature .fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.feature .ftxt{display:flex;flex-direction:column;gap:12px;padding:24px;min-width:0}
+.feature h3{font-size:clamp(22px,2vw,30px);letter-spacing:-.02em;line-height:1.05;margin:0;font-weight:600;text-wrap:balance}
+.feature p{margin:0;color:var(--muted);max-width:40ch}
+.feature a{align-self:flex-start;background:var(--cream);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px}
+@media (max-width:760px){.feature{grid-column:1/-1;grid-row:auto}.feature .fimg{flex:none;aspect-ratio:4/5;min-height:0}}
+
+/* filter drawer */
+.scrim{position:fixed;inset:0;background:rgba(255,255,255,.6);z-index:30}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--bg);border-left:1px solid var(--line);z-index:31;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+.dh h2{margin:0;font-size:20px;font-weight:600}
+.x{border:0;background:transparent;cursor:pointer;padding:6px}
+.db{overflow-y:auto;padding:4px 24px 24px;flex:1}
+fieldset{border:0;border-bottom:1px solid var(--line);padding:18px 0;margin:0}
+legend{font-weight:600;padding:0;margin-bottom:12px;float:left;width:100%}
+fieldset label{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:15px;clear:left;cursor:pointer}
+fieldset label span{margin-left:auto;color:var(--muted);font-size:13px}
+input[type=radio],input[type=checkbox]{accent-color:var(--ink);width:18px;height:18px}
+.df{display:flex;gap:10px;padding:16px 24px;border-top:1px solid var(--line)}
+.df button{flex:1;border-radius:999px;padding:12px;cursor:pointer;font-weight:600;border:1px solid var(--ink)}
+.df .go{background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.df .clr{background:var(--bg)}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:36px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);background:var(--bg);color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.08);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:40}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<script src="/bag.js"></script>
+<div class="promo"><div class="wrap">We ship all over Europe with FedEx</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="/" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata, House of Human Optimisation"></a>
+  <nav aria-label="Main">
+    <a href="#all" data-nav="all">Shop all</a><a href="#massage" data-nav="massage">Massage</a><a href="#compression" data-nav="compression">Compression</a><a href="#skin-and-led" data-nav="skin-and-led">Skin &amp; LED</a><a href="#infrared" data-nav="infrared">Infrared</a><a href="#saunas" data-nav="saunas">Saunas</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
+  </nav>
+  <div class="hdr-r">
+    <div class="search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></div>
+
+    <a href="#" class="bag" aria-label="Bag"><svg class="ico" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b id="bagN">0</b></a>
+  </div>
+</div></header>
+
+<main>
+  <div class="wrap head">
+    <h1><span id="h1t">All products</span><sup id="total"></sup></h1>
+    <section class="bf" aria-label="Black Friday">
+      <div class="bf-tag">Black Friday</div>
+      <div class="bf-copy"><b>15% off everything</b><span>Now until 1 December · while stock lasts</span></div>
+      <div class="bf-right"><div class="bf-cd" id="bfcd" aria-label="Time left in the sale"></div><a href="#">Shop the sale &rarr;</a></div>
+    </section>
+    <div class="cats" id="cats" role="group" aria-label="Categories"></div>
+  </div>
+  <div class="bar"><div class="wrap">
+    <span class="count" id="count"></span>
+    <button class="fbtn" id="openF"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Filter &amp; sort <i id="fN" hidden></i></button>
+  </div></div>
+  <div class="wrap"><div class="grid" id="grid"></div></div>
+</main>
+
+<footer><div class="wrap"><a class="logo" href="/" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata" style="height:28px"></a><span>House of Human Optimisation</span><span>© 2026 Ladata</span></div></footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Filters">
+  <div class="dh"><h2>Filter &amp; sort</h2><button class="x" id="closeF" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="db">
+    <fieldset><legend>Sort by</legend>
+      <label><input type="radio" name="sort" id="s-feat" value="feat" checked>Recommended</label>
+      <label><input type="radio" name="sort" id="s-asc" value="asc">Price: low to high</label>
+      <label><input type="radio" name="sort" id="s-desc" value="desc">Price: high to low</label>
+      <label><input type="radio" name="sort" id="s-new" value="new">Newest</label>
+    </fieldset>
+    <fieldset id="fsCat"><legend>Category</legend></fieldset>
+    <fieldset><legend>Price</legend>
+      <label><input type="checkbox" id="p1" value="0-200">Under €200<span id="pc1"></span></label>
+      <label><input type="checkbox" id="p2" value="200-400">€200 to €400<span id="pc2"></span></label>
+      <label><input type="checkbox" id="p3" value="400-99999">Over €400<span id="pc3"></span></label>
+    </fieldset>
+    <fieldset><legend>Availability</legend>
+      <label><input type="checkbox" id="stock">In stock only</label>
+      <label><input type="checkbox" id="saleOnly">On sale</label>
+    </fieldset>
+  </div>
+  <div class="df"><button class="clr" id="clr">Clear all</button><button class="go" id="apply">Show products</button></div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+// Line drawings stand in until product photos are added (PHOTO map below).
+const ART={
+ gun:'<path d="M18 30h44a10 10 0 0 1 0 20H18z"/><path d="M62 34v12"/><path d="M40 50l-6 34h14l4-34"/><circle cx="12" cy="40" r="7"/><path d="M18 36h-6M18 44h-6"/>',
+ mini:'<rect x="30" y="16" width="26" height="46" rx="13"/><path d="M36 62l-2 20h18l-2-20"/><circle cx="43" cy="10" r="6"/>',
+ relief:'<path d="M26 16c10-6 22-6 30 2l-6 40H32z"/><path d="M32 58l-4 26h22l-4-26"/><circle cx="41" cy="10" r="5"/>',
+ boots:'<path d="M22 8h18v52c0 8 4 12 12 14v10H22z"/><path d="M50 8h18v52c0 8 4 12 12 14v10H50z" transform="translate(-6 0)"/><path d="M22 24h18M22 40h18M44 24h18M44 40h18"/>',
+ sleeve:'<path d="M28 10h28l-4 74H34z"/><path d="M29 28h26M30 46h24M32 64h20"/><rect x="44" y="34" width="8" height="10" rx="2"/>',
+ neck:'<path d="M14 54c0-24 12-38 28-38s28 14 28 38"/><path d="M14 54c-4 0-6 6-2 10M70 54c4 0 6 6 2 10"/><path d="M28 28c4-4 9-6 14-6s10 2 14 6"/>',
+ back:'<rect x="10" y="30" width="64" height="30" rx="15"/><path d="M10 45H2M74 45h8"/><circle cx="30" cy="45" r="4"/><circle cx="42" cy="45" r="4"/><circle cx="54" cy="45" r="4"/>',
+ cube:'<path d="M42 12l28 14v32L42 72 14 58V26z"/><path d="M14 26l28 14 28-14M42 40v32"/>',
+ chest:'<path d="M18 14c6 10 14 14 24 14s18-4 24-14"/><path d="M18 14l-6 50c10 8 20 12 30 12s20-4 30-12l-6-50"/><path d="M28 40h28M26 52h32"/>',
+ face:'<rect x="34" y="8" width="16" height="50" rx="8"/><circle cx="42" cy="20" r="5"/><path d="M38 58v24h8V58"/>',
+ wand:'<path d="M36 8h12l2 56H34z"/><ellipse cx="42" cy="72" rx="12" ry="8"/>',
+ mask:'<path d="M42 8c-18 0-28 14-28 32s10 36 28 36 28-18 28-36S60 8 42 8z"/><ellipse cx="32" cy="36" rx="6" ry="3"/><ellipse cx="52" cy="36" rx="6" ry="3"/><path d="M36 58c4 3 8 3 12 0"/>',
+ head:'<circle cx="42" cy="34" r="20"/><path d="M30 34h24"/><path d="M42 54v26"/>',
+ sauna:'<path d="M14 22l28-10 28 10v52H14z"/><path d="M14 22h56M30 74V40h24v34"/><path d="M42 40v34"/>',
+ glasses:'<circle cx="24" cy="46" r="14"/><circle cx="60" cy="46" r="14"/><path d="M38 44c3-3 5-3 8 0M10 42l-6-4M74 42l6-4"/>',
+ goggles:'<path d="M8 36c0-8 6-12 14-12h40c8 0 14 4 14 12v6c0 8-6 12-14 12H52l-6-6h-8l-6 6H22c-8 0-14-4-14-12z"/><path d="M8 40H2M76 40h6"/>',
+};
+const P=[
+ {n:'Theragun PRO Plus',c:'mass',s:'Heat, LED and vibration massage',p:649,a:'gun'},
+ {n:'Theragun Prime Plus',c:'mass',s:'Heated massage gun',p:419,a:'gun'},
+ {n:'Theragun Prime',c:'mass',s:'Deep tissue massage · 6th gen',p:319,a:'gun',neu:true},
+ {n:'Theragun Sense',c:'mass',s:'Guided-routine massage · 2nd gen',p:299,a:'gun',neu:true},
+ {n:'Theragun Mini Plus',c:'mass',s:'Compact heated massage gun',p:269,a:'gun'},
+ {n:'Theragun Mini',c:'mass',s:'Compact massage gun · 3rd gen',p:219,a:'gun',col:['#1b1b1b','#d9a9a0']},
+ {n:'Theragun Relief',c:'mass',s:'Gentle everyday massage',p:149,a:'relief',col:['#22304a','#d8cbb5']},
+ {n:'JetBoots PRO Plus',c:'comp',s:'Compression, infrared LED and vibration',p:1049,a:'boots',sizes:3},
+ {n:'JetBoots Prime',c:'comp',s:'Wireless compression boots',p:529,a:'boots',sizes:3},
+ {n:'RecoveryPulse Arm',c:'comp',s:'Compression sleeve with vibration',p:159,a:'sleeve',sizes:5},
+ {n:'RecoveryPulse Calf',c:'comp',s:'Calf compression sleeve with vibration',p:159,a:'sleeve',neu:true},
+ {n:'ThermNeck & Upper Back',c:'heat',s:'Neck and upper back: percussion, heat, LED',p:349,a:'neck',neu:true},
+ {n:'ThermBack LED',c:'heat',s:'Lower back: heat, infrared and vibration',p:269,a:'back'},
+ {n:'RecoveryTherm Cube',c:'heat',s:'Hot and cold contrast therapy',p:null,a:'cube'},
+ {n:'Neck & Chest LED',c:'skin',s:'Hands-free LED for neck and chest',p:399,a:'chest',neu:true},
+ {n:'SkinSpa PRO',c:'skin',s:'Complete anti-ageing facial system',p:399,a:'head',neu:true},
+ {n:'TheraFace Mask Glo',c:'skin',s:'LED mask with 504 LEDs and massage',p:349,a:'mask'},
+ {n:'SkinSpa CryoCurrent',c:'skin',s:'Cold microcurrent to lift and depuff',p:299,a:'face',neu:true},
+ {n:'SkinSpa ThermLED',c:'skin',s:'Facial LED with heated massage',p:199,a:'face'},
+ {n:'ThermFace Massage',c:'skin',s:'Heated percussive facial massage',p:199,a:'face'},
+ {n:'TheraFace Depuffing Wand',c:'skin',s:'Depuffing on the go',p:149,a:'wand',col:['#f4f4f2','#3a3f8f']},
+ {n:'Redvion One',c:'sleep',s:'Blue-light blocking glasses',p:59.99,was:79.99,a:'glasses',neu:true},
+ {n:'SmartGoggles',c:'sleep',s:'Eye mask with heat and vibration · 2nd gen',p:169,was:209,a:'goggles'},
+ {n:'Eco-Sauna Vidro',c:'sauna',s:'Glass steam sauna · up to 6 people · 172 × 172 × 180 cm',p:9990,a:'sauna',neu:true,note:'Installation not included'},
+ {n:'Eco-Sauna Mini Vidro',c:'sauna',s:'Compact glass steam sauna · up to 3 people · 172 × 100 × 180 cm',p:6990,a:'sauna',neu:true,note:'Installation not included'},
+ {n:'Ladata Body Oil',c:'care',s:'Muscles & Mind Recovery · zero-waste, vegan, cruelty-free',p:20,a:'wand',neu:true},
+];
+// Filled with img/<slug>.jpg once photos arrive, e.g. PHOTOS['theragun-pro-plus']=1
+const PHOTOS={'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverypulse-arm':1,'recoverypulse-calf':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
+// Black Friday: 15% off every price until the sale ends, then prices revert automatically.
+const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
+const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};
+P.forEach((x,i)=>{bfPrice(x);x.i=i;x.slug=x.n.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/-$/,'')});
+const CATS=[['all','All','gun'],['mass','Massage','gun'],['comp','Compression','boots'],['heat','Hot &amp; cold','back'],['skin','Skin &amp; LED','mask'],['ir','Infrared','back'],['sleep','Sleep','goggles'],['sauna','Saunas','sauna'],['care','Body care','wand']];
+const svg=(k,cls='art')=>`<svg class="${cls}" viewBox="0 0 84 90" aria-hidden="true">${ART[k]}</svg>`;
+const eur=n=>'€'+n.toLocaleString('en-IE',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
+const $=id=>document.getElementById(id);
+let st={cat:'all',sort:'feat',price:[],stock:false,sale:false},wish=new Set();
+try{Object.assign(st,JSON.parse(localStorage.getItem('ladata-v2')||'{}'))}catch(e){}
+const HK={all:'all',massage:'mass',compression:'comp','hot-and-cold':'heat','skin-and-led':'skin',infrared:'ir',sleep:'sleep',saunas:'sauna','body-care':'care'};
+const KH=Object.fromEntries(Object.entries(HK).map(([a,b])=>[b,a]));
+function fromHash(){const k=HK[(location.hash||'').slice(1)];if(k)st.cat=k}
+fromHash();
+
+// Infrared groups every product that uses infrared or red/near-infrared LED light, across categories.
+const IR=new Set(['theragun-pro-plus','jetboots-pro-plus','thermneck-and-upper-back','thermback-led','neck-and-chest-led','theraface-mask-glo','skinspa-thermled']);
+const inCat=(p,k)=>k==='all'||p.c===k||(k==='ir'&&IR.has(p.slug));
+function base(){return P.filter(p=>inCat(p,st.cat))}
+function list(){
+  let L=base().filter(p=>(!st.stock||!p.out)&&(!st.sale||p.was)&&(!st.price.length||st.price.some(r=>{const[a,b]=r.split('-').map(Number);return p.p!=null&&p.p>=a&&p.p<b})));
+  if(st.sort==='asc')L=[...L].sort((a,b)=>(a.p??1e9)-(b.p??1e9));
+  if(st.sort==='desc')L=[...L].sort((a,b)=>(b.p??-1)-(a.p??-1));
+  if(st.sort==='new')L=[...L].sort((a,b)=>(b.neu|0)-(a.neu|0));
+  return L;
+}
+function cats(){
+  $('cats').innerHTML=CATS.map(([k,l,a])=>`<button class="cat" aria-pressed="${st.cat===k}" data-k="${k}"><span class="th">${svg(a,'ico')}</span>${l}</button>`).join('');
+  $('fsCat').innerHTML='<legend>Categoria</legend>'+CATS.map(([k,l])=>`<label><input type="radio" name="cat" id="c-${k}" value="${k}" ${st.cat===k?'checked':''}>${l}<span>${k==='all'?P.length:P.filter(p=>inCat(p,k)).length}</span></label>`).join('');
+}
+function card(p){
+  const badge=p.out?'<span class="badge out">Sold out</span>':p.was?`<span class="badge sale">${BF_ON?'−15%':'Sale'}</span>`:p.neu?'<span class="badge">New</span>':'';
+  const sw=p.col?p.col.map(c=>`<span class="sw" style="background:${c}"></span>`).join('')+`<span>${p.col.length} colours</span>`:p.sizes?`<span>${p.sizes} sizes</span>`:'';
+  const price=p.p==null?'<span style="color:var(--muted)">Price to be confirmed</span>':p.was?`<span class="now">${eur(p.p)}</span><s>${eur(p.was)}</s>`:eur(p.p);
+  return `<a class="card" data-i="${p.i}" href="/product#${p.slug}">
+    <div class="tile">${PHOTOS[p.slug]?`<img class="${p.cover?'cover':''}" src="/img/${p.slug}.jpg" alt="${p.n}" loading="lazy">`:svg(p.a)}${badge}<button class="wish" data-w="${p.i}" aria-pressed="${wish.has(p.i)}" aria-label="Save ${p.n}"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>${PHOTOS[p.slug]?'':'<span class="ph">photo to come</span>'}</div>
+    <div class="sws">${sw}</div>
+    <div class="info"><span class="nm">${p.n}</span><span class="sub">${p.s}</span><span class="pr">${price}${p.p==null?'':'<span class="vat">VAT not included</span>'}</span>${p.note?`<span class="note">${p.note}</span>`:''}</div>
+    <button class="qadd" type="button" data-add="${p.i}" aria-label="Add ${p.n} to bag">${QADD}</button>
+  </a>`;
+}
+function render(){
+  const L=list();
+  const cl=(CATS.find(c=>c[0]===st.cat)||[])[1];
+  $('h1t').innerHTML=st.cat==='all'?'All products':cl;$('total').textContent=st.cat==='all'?P.length:'';
+  document.querySelectorAll('[data-nav]').forEach(a=>{if(HK[a.dataset.nav]===st.cat)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  if(KH[st.cat]&&location.hash.slice(1)!==KH[st.cat])history.replaceState(null,'','#'+KH[st.cat]);
+  $('count').textContent=L.length+(L.length===1?' product':' products');
+  const html=L.map(card);
+  if(st.cat==='all'&&L.length>8)html.splice(6,0,`<section class="feature"><div class="fimg"><img src="/img/feature-recover.jpg" alt="Woman stepping into a cold plunge tub" loading="lazy"></div><div class="ftxt"><h3>Recover better, every day.</h3><p>Ladata is the House of Human Optimisation, in Matosinhos. Contrast therapy and infrared sessions that help your body and mind recover, perform and feel better, every day.</p><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">Discover now</a></div></section>`);
+  $('grid').innerHTML=html.join('')||'<p style="color:var(--muted);padding:40px 0">No products match these filters.</p>';
+  const nf=st.price.length+(st.stock|0)+(st.sale|0)+(st.sort!=='feat'|0);
+  $('fN').hidden=!nf;$('fN').textContent=nf;
+  ['p1','p2','p3'].forEach((id,k)=>{const[a,b]=$(id).value.split('-').map(Number);$('pc'+(k+1)).textContent=base().filter(p=>p.p!=null&&p.p>=a&&p.p<b).length});
+  try{localStorage.setItem('ladata-v2',JSON.stringify(st))}catch(e){}
+}
+function sync(){
+  document.querySelectorAll('input[name=sort]').forEach(r=>r.checked=r.value===st.sort);
+  ['p1','p2','p3'].forEach(id=>$(id).checked=st.price.includes($(id).value));
+  $('stock').checked=st.stock;$('saleOnly').checked=st.sale;
+}
+const QADD='<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Add to bag';
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._h);e._h=setTimeout(()=>e.classList.remove('on'),2000)}
+function drawer(on){$('drawer').hidden=!on;$('scrim').hidden=!on;if(on){cats();sync()}}
+
+$('cats').addEventListener('click',e=>{const b=e.target.closest('.cat');if(!b)return;st.cat=b.dataset.k;cats();render()});
+$('openF').onclick=()=>drawer(true);$('closeF').onclick=$('scrim').onclick=()=>drawer(false);
+$('apply').onclick=()=>{
+  st.sort=document.querySelector('input[name=sort]:checked').value;
+  st.cat=(document.querySelector('input[name=cat]:checked')||{}).value||'all';
+  st.price=['p1','p2','p3'].filter(id=>$(id).checked).map(id=>$(id).value);
+  st.stock=$('stock').checked;st.sale=$('saleOnly').checked;
+  drawer(false);cats();render();
+window.addEventListener('hashchange',()=>{fromHash();cats();render();window.scrollTo({top:0,behavior:'smooth'})});
+};
+$('clr').onclick=()=>{st={cat:'all',sort:'feat',price:[],stock:false,sale:false};cats();sync()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')drawer(false)});
+$('grid').addEventListener('click',e=>{
+  const w=e.target.closest('[data-w]');
+  const ad=e.target.closest('[data-add]');
+  if(ad){e.preventDefault();LadataBag.add(P[+ad.dataset.add],ad);return}
+  if(w){e.preventDefault();const i=+w.dataset.w;wish.has(i)?wish.delete(i):wish.add(i);w.setAttribute('aria-pressed',wish.has(i));return}
+
+});
+document.addEventListener('click',e=>{if(e.target.closest('a[href="#"]'))e.preventDefault()});
+function bf(){const t=BF_END-Date.now(),e=$('bfcd');if(!e)return;
+  if(t<=0){e.innerHTML='<span>Ended</span>';return}
+  const d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60;
+  e.innerHTML=[[d,'d'],[h,'h'],[m,'m']].map(([v,l])=>`<span>${String(v).padStart(2,'0')}<small>${l}</small></span>`).join('<i>·</i>')}
+bf();setInterval(bf,30000);
+cats();render();
+window.addEventListener('hashchange',()=>{fromHash();cats();render();window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
