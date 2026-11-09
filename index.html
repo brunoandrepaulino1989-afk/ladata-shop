@@ -205,7 +205,7 @@ footer .bot{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px
     <div class="bf-tag">Black Friday</div>
     <div class="bf-copy">15% off everything<span>Now until 1 December · while stock lasts</span></div>
     <div class="bf-cd" id="bfcd" aria-label="Time left in the sale"></div>
-    <a href="#">Shop the sale &rarr;</a>
+    <a href="/shop#all">Shop the sale &rarr;</a>
   </div></section>
 
   <section class="block"><div class="wrap">
@@ -262,7 +262,7 @@ footer .bot{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px
   <section class="news"><div class="wrap">
     <h2>Recovery notes, once a month. Early access to drops and sales.</h2>
     <div>
-      <form id="nf"><label for="email" hidden>Email</label><input id="email" type="email" placeholder="Your email" required><button class="btn dark" type="submit">Subscribe</button></form>
+      <form id="nf" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="company"><input type="hidden" name="form-name" value="newsletter"><p hidden><label>Company <input name="company"></label></p><label for="email" hidden>Email</label><input id="email" name="email" type="email" placeholder="Your email" autocomplete="email" required><button class="btn dark" type="submit">Subscribe</button></form>
       <small>No spam. Unsubscribe any time.</small>
     </div>
   </div></section>
@@ -302,7 +302,7 @@ $('prev').onclick=()=>$('rail').scrollBy({left:-step(),behavior:'smooth'});
 $('next').onclick=()=>$('rail').scrollBy({left:step(),behavior:'smooth'});
 function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._h);e._h=setTimeout(()=>e.classList.remove('on'),2000)}
 $('rail').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(b){e.preventDefault();const x=R[+b.dataset.add];LadataBag.add({slug:x.i,n:x.n,s:x.s,p:x.p,was:x.was},b)}});
-$('nf').addEventListener('submit',e=>{e.preventDefault();toast('Thanks. This is a mock-up, nothing was sent.');e.target.reset()});
+$('nf').addEventListener('submit',async e=>{e.preventDefault();const f=e.target;try{const r=await fetch('/',{method:'POST',headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()});if(!r.ok)throw 0;toast('Thanks, you are subscribed.');f.reset()}catch(err){toast('Something went wrong. Please try again.')}});
 document.addEventListener('click',e=>{if(e.target.closest('a.logo')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});return}if(e.target.closest('a[href="#"]'))e.preventDefault()});
 function bf(){const t=BF_END-Date.now(),e=$('bfcd');
   if(t<=0){e.textContent='Ended';return}

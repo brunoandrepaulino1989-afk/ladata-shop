@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Pretty URLs: /shop, /product, /success
+[[redirects]]
+  from = "/shop"
+  to = "/shop.html"
+  status = 200
+[[redirects]]
+  from = "/product"
+  to = "/product.html"
+  status = 200
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+# Keep server code and notes off the public site
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/README.md"
+  to = "/404"
+  status = 404
+  force = true

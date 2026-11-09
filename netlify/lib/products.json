@@ -1,0 +1,132 @@
+{
+ "theragun-pro-plus": {
+  "name": "Theragun PRO Plus",
+  "price": 649,
+  "image": "img/theragun-pro-plus.jpg"
+ },
+ "theragun-prime-plus": {
+  "name": "Theragun Prime Plus",
+  "price": 419,
+  "image": "img/theragun-prime-plus.jpg"
+ },
+ "theragun-prime": {
+  "name": "Theragun Prime",
+  "price": 319,
+  "image": "img/theragun-prime.jpg"
+ },
+ "theragun-sense": {
+  "name": "Theragun Sense",
+  "price": 299,
+  "image": "img/theragun-sense.jpg"
+ },
+ "theragun-mini-plus": {
+  "name": "Theragun Mini Plus",
+  "price": 269,
+  "image": "img/theragun-mini-plus.jpg"
+ },
+ "theragun-mini": {
+  "name": "Theragun Mini",
+  "price": 219,
+  "image": "img/theragun-mini.jpg"
+ },
+ "theragun-relief": {
+  "name": "Theragun Relief",
+  "price": 149,
+  "image": "img/theragun-relief.jpg"
+ },
+ "jetboots-pro-plus": {
+  "name": "JetBoots PRO Plus",
+  "price": 1049,
+  "image": "img/jetboots-pro-plus.jpg"
+ },
+ "jetboots-prime": {
+  "name": "JetBoots Prime",
+  "price": 529,
+  "image": "img/jetboots-prime.jpg"
+ },
+ "recoverypulse-arm": {
+  "name": "RecoveryPulse Arm",
+  "price": 159,
+  "image": "img/recoverypulse-arm.jpg"
+ },
+ "recoverypulse-calf": {
+  "name": "RecoveryPulse Calf",
+  "price": 159,
+  "image": "img/recoverypulse-calf.jpg"
+ },
+ "thermneck-and-upper-back": {
+  "name": "ThermNeck & Upper Back",
+  "price": 349,
+  "image": "img/thermneck-and-upper-back.jpg"
+ },
+ "thermback-led": {
+  "name": "ThermBack LED",
+  "price": 269,
+  "image": "img/thermback-led.jpg"
+ },
+ "recoverytherm-cube": {
+  "name": "RecoveryTherm Cube",
+  "price": null,
+  "image": "img/recoverytherm-cube.jpg"
+ },
+ "neck-and-chest-led": {
+  "name": "Neck & Chest LED",
+  "price": 399,
+  "image": "img/neck-and-chest-led.jpg"
+ },
+ "skinspa-pro": {
+  "name": "SkinSpa PRO",
+  "price": 399,
+  "image": "img/skinspa-pro.jpg"
+ },
+ "theraface-mask-glo": {
+  "name": "TheraFace Mask Glo",
+  "price": 349,
+  "image": "img/theraface-mask-glo.jpg"
+ },
+ "skinspa-cryocurrent": {
+  "name": "SkinSpa CryoCurrent",
+  "price": 299,
+  "image": "img/skinspa-cryocurrent.jpg"
+ },
+ "skinspa-thermled": {
+  "name": "SkinSpa ThermLED",
+  "price": 199,
+  "image": "img/skinspa-thermled.jpg"
+ },
+ "thermface-massage": {
+  "name": "ThermFace Massage",
+  "price": 199,
+  "image": "img/thermface-massage.jpg"
+ },
+ "theraface-depuffing-wand": {
+  "name": "TheraFace Depuffing Wand",
+  "price": 149,
+  "image": "img/theraface-depuffing-wand.jpg"
+ },
+ "redvion-one": {
+  "name": "Redvion One",
+  "price": 59.99,
+  "image": "img/redvion-one.jpg"
+ },
+ "smartgoggles": {
+  "name": "SmartGoggles",
+  "price": 169,
+  "image": "img/smartgoggles.jpg"
+ },
+ "eco-sauna-vidro": {
+  "name": "Eco-Sauna Vidro",
+  "price": 9990,
+  "image": "img/eco-sauna-vidro.jpg"
+ },
+ "eco-sauna-mini-vidro": {
+  "name": "Eco-Sauna Mini Vidro",
+  "price": 6990,
+  "image": "img/eco-sauna-mini-vidro.jpg"
+ },
+ "ladata-body-oil": {
+  "name": "Ladata Body Oil",
+  "price": 20,
+  "image": "img/ladata-body-oil.jpg"
+ }
+}
