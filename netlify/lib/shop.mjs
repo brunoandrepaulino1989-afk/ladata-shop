@@ -2,7 +2,7 @@
 // Prices always come from products.json here, never from the browser.
 import products from "./products.json" with { type: "json" };
 
-export const SITE = (process.env.SITE_URL || "https://ladata.shop").replace(/\/$/, "");
+export const SITE = (process.env.SITE_URL || process.env.URL || "https://ladata.shop").replace(/\/$/, "");
 export const SHIP_CENTS = 990; // flat FedEx shipping, excl. VAT
 export const VAT_RATE = 0.23; // added on (discounted products + shipping)
 const BF_END = Date.parse("2026-12-01T23:59:59Z"); // Black Friday: 15% off until this moment
