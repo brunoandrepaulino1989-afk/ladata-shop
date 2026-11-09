@@ -181,7 +181,7 @@ footer .logo img{height:28px}
 <header><div class="wrap">
   <a class="logo" href="/" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata, House of Human Optimisation"></a>
   <nav aria-label="Main">
-    <a href="/shop#all">Shop all</a><a href="/shop#massage">Massage</a><a href="/shop#compression">Compression</a><a href="/shop#skin-and-led">Skin &amp; LED</a><a href="/shop#infrared">Infrared</a><a href="/shop#saunas">Saunas</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
+    <a href="/shop#all">Shop all</a><a href="/shop#massage">Massage</a><a href="/shop#compression">Compression</a><a href="/shop#skin-and-led">Skin &amp; LED</a><a href="/shop#infrared">Infrared</a><a href="/shop#saunas">Saunas</a><a href="/shop#biomarkers-test">BioMarkers Test</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
   </nav>
   <div class="hdr-r">
     <div class="search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></div>
@@ -210,8 +210,8 @@ footer .logo img{height:28px}
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-const CH={mass:'massage',comp:'compression',heat:'hot-and-cold',skin:'skin-and-led',sleep:'sleep',sauna:'saunas',care:'body-care'};
-const CAT={mass:'Massage',comp:'Compression',heat:'Hot & cold',skin:'Skin & LED',sleep:'Sleep',sauna:'Saunas',care:'Body care'};
+const CH={mass:'massage',comp:'compression',heat:'hot-and-cold',skin:'skin-and-led',sleep:'sleep',sauna:'saunas',care:'body-care',bio:'biomarkers-test'};
+const CAT={mass:'Massage',comp:'Compression',heat:'Hot & cold',skin:'Skin & LED',sleep:'Sleep',sauna:'Saunas',care:'Body care',bio:'BioMarkers Test'};
 const P=[
  {n:'Theragun PRO Plus',c:'mass',s:'Heat, LED and vibration massage',p:649,d:'Therabody’s most complete massage gun. It combines percussive, LED, vibration and heated percussive therapy. Cold therapy is available as a separate attachment.'},
  {n:'Theragun Prime Plus',c:'mass',s:'Heated massage gun',p:419,d:'A massage gun with heated percussive therapy, for faster warm-ups, recovery and relief.'},
@@ -238,6 +238,7 @@ const P=[
  {n:'SmartGoggles',c:'sleep',s:'Eye mask with heat and vibration · 2nd gen',p:169,was:209,d:'The redesigned SmartGoggles have a 100% blackout design and more comfort, with heat and vibration to help you switch off.'},
  {n:'Eco-Sauna Vidro',c:'sauna',s:'Glass steam sauna for up to 6 people',p:9990,cover:1,neu:1,note:'Installation not included',main:'eco-sauna-vidro-r.jpg',g:[['eco-sauna-vidro-4.jpg','Eco-Sauna Vidro on a wooden deck by a golf course'],['eco-sauna-vidro-5.jpg','Eco-Sauna Vidro lit at night under frangipani trees'],['eco-sauna-vidro-6.jpg','Eco-Sauna Vidro in a garden overlooking the city']],d:'A tempered-glass steam sauna with a 360° view, designed to blend into a garden, a terrace or an open space. It comes with an internal shower and interior lighting, and installation takes about three hours.',f:[['Size','172 × 172 × 180 cm (W × D × H)'],['Weight','380 kg'],['Capacity','Up to 6 people'],['Heater','Electric steam generator, 3,500 W, 220 V'],['Glass','8 mm tempered, smoked, green or clear'],['Wood','Treated Lyptus, Paraju or similar']]},
  {n:'Eco-Sauna Mini Vidro',c:'sauna',s:'Compact glass steam sauna for up to 3 people',p:6990,cover:1,neu:1,note:'Installation not included',main:'eco-sauna-mini-vidro-r.jpg',g:[['eco-sauna-mini-vidro-4.jpg','Eco-Sauna Mini Vidro lit up on a garden deck at dusk'],['eco-sauna-mini-vidro-5.jpg','Eco-Sauna Mini Vidro in green glass on a deck among palms'],['eco-sauna-mini-vidro-6.jpg','Eco-Sauna Mini Vidro in frosted glass inside a bathroom'],['eco-sauna-mini-vidro-7.jpg','Eco-Sauna Mini Vidro on a garden lawn']],d:'The compact version of the Eco-Sauna, made for balconies, terraces, small gardens and indoor spaces. Tempered glass, an internal shower and interior lighting, for up to 3 people. Installed in about 3 hours.',f:[['Height','180 cm'],['Width','172 cm'],['Depth','100 cm'],['Weight','290 kg'],['Installation time','3 hours'],['Capacity','Up to 3 people'],['Warranty','3 years'],['Current','20 A'],['Voltage','220 V'],['Power','3,500 W']]},
+ {n:'MaxPerformance Test',c:'bio',s:'At-home blood test · 10 biomarkers',p:100.81,neu:1,d:'An in-depth blood test for athletes and active people who want to optimise performance and recovery. It measures ten key biomarkers that show how your hormones, metabolism and heart health respond to training, so you can adjust training and diet with real data. A small finger-prick sample, collected at home and analysed by a certified laboratory.',f:[['Biomarkers','Cortisol, Free Testosterone, Total Testosterone, Cholesterol, LDL-C, HDL-C, Triglycerides, Vitamin D, Creatinine, AST'],['Sample','Finger-prick blood, collected at home (about two small tubes)'],['Before the test','Fast beforehand. Collect before 11:30 am, Monday to Thursday, and post the sample the same day'],['In the kit','Everything you need to collect and return the sample, prepaid return to the lab, instructions and videos'],['Results','Digital report by email within 5 working days of the lab receiving your sample'],['Laboratory','Lab in the Box']]},
  {n:'Ladata Body Oil',c:'care',s:'Muscles & Mind Recovery',p:20,main:'ladata-body-oil-w.jpg',neu:1,d:'Our own body oil, made for the end of a recovery session. Massage it into warm muscles after the sauna or a massage gun session.',f:[['Made by','Ladata'],['Values','Zero-waste, vegan, cruelty-free']]},
 ];
 // Black Friday: 15% off every price until the sale ends, then prices revert automatically.
@@ -250,6 +251,7 @@ const BAND={
  comp:['l-compression.jpg','Straight from the Recovery Room','JetBoots are part of every Recovery Room session at Ladata Matosinhos. Try a session and feel the difference in your legs.'],
  care:['l-oil-shelf.jpg','Made at the House of Human Optimisation','The same oil we keep on the shelf at the club, for the last ten minutes of your recovery.'],
  sauna:['l-infrared.jpg','Bring the club home','Contrast therapy starts with heat. Try a session at Ladata before choosing the sauna for your home.'],
+ bio:['l-infrared.jpg','Train with data','Test before a training block and again after it, to see how your hormones, heart health and recovery respond.'],
  def:['l-infrared.jpg','Try it at Ladata first','Book a contrast therapy or infrared session in Matosinhos and test our recovery tools on site.'],
 };
 const $=id=>document.getElementById(id);
@@ -286,15 +288,15 @@ function render(){
     <div class="stock${p.out?' out':''}"><i></i>${p.out?'Sold out · we will email you when it is back':'In stock · ships in 1–2 working days'}</div>
     <div class="add"><button id="addBtn">Add to bag</button><button class="wish" id="wishBtn" aria-pressed="${wish.has(p.slug)}" aria-label="Save ${p.n}"><svg class="ico" viewBox="0 0 24 24" style="margin:auto"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
     <ul class="perks">
-      <li><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>${p.note?p.note+' · delivery arranged with you':'Shipping €9.90 + VAT across Portugal'}</li>
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>${p.note?p.note+' · delivery arranged with you':'Shipping €9.90 + VAT, all over Europe with FedEx'}</li>
       <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>30-day returns</li>
-      <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg>${((p.f||[]).find(x=>x[0]==='Warranty')||[,'2 years'])[1].replace(/ years?/,'-year')} warranty</li>
+      <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></svg>${p.c==='bio'?'Lab results by email':((p.f||[]).find(x=>x[0]==='Warranty')||[,'2 years'])[1].replace(/ years?/,'-year')+' warranty'}</li>
     </ul>
-    <div class="try"><div><b>Try it at Ladata Matosinhos</b>Book a session and test it before you buy.</div><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">Book</a></div>
+    ${p.c==='bio'?'':'<div class="try"><div><b>Try it at Ladata Matosinhos</b>Book a session and test it before you buy.</div><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">Book</a></div>'}
     <div class="acc">
       <details><summary>Description</summary><div class="in"><p>${p.d}</p>${p.opts?`<p>${p.opts.replace(/<\/?b>/g,'')}.</p>`:''}</div></details>
       <details${p.f&&p.f.length>4?' open':''}><summary>${p.c==='sauna'?'Technical specifications':'Details'}</summary><div class="in"><dl class="facts">${facts.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></div></details>
-      <details><summary>Shipping &amp; returns</summary><div class="in"><p>${p.note?'Delivery and installation are arranged with you after the order. ':''}Orders ship from Porto within 1–2 working days. Shipping is €9.90 + VAT on every order in Portugal.</p><p>Changed your mind? Return unused products within 30 days.</p></div></details>
+      <details><summary>Shipping &amp; returns</summary><div class="in"><p>${p.c==='bio'?'The kit includes the prepaid return to the lab. ':''}${p.note?'Delivery and installation are arranged with you after the order. ':''}Orders ship from Porto within 1–2 working days. Shipping is €9.90 + VAT on every order, all over Europe with FedEx.</p><p>Changed your mind? Return unused products within 30 days.</p></div></details>
     </div>`;
   const b=BAND[p.c]||BAND.def;
   $('band').className='bfb';

@@ -128,5 +128,10 @@
   "name": "Ladata Body Oil",
   "price": 20,
   "image": "img/ladata-body-oil.jpg"
+ },
+ "maxperformance-test": {
+  "name": "MaxPerformance Test",
+  "price": 100.81,
+  "image": "img/maxperformance-test.jpg"
  }
 }

@@ -155,7 +155,7 @@ footer .wrap{padding-block:36px;display:flex;justify-content:space-between;flex-
 <header><div class="wrap">
   <a class="logo" href="/" aria-label="Ladata homepage"><img src="/img/ladata-logo.png" alt="Ladata, House of Human Optimisation"></a>
   <nav aria-label="Main">
-    <a href="#all" data-nav="all">Shop all</a><a href="#massage" data-nav="massage">Massage</a><a href="#compression" data-nav="compression">Compression</a><a href="#skin-and-led" data-nav="skin-and-led">Skin &amp; LED</a><a href="#infrared" data-nav="infrared">Infrared</a><a href="#saunas" data-nav="saunas">Saunas</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
+    <a href="#all" data-nav="all">Shop all</a><a href="#massage" data-nav="massage">Massage</a><a href="#compression" data-nav="compression">Compression</a><a href="#skin-and-led" data-nav="skin-and-led">Skin &amp; LED</a><a href="#infrared" data-nav="infrared">Infrared</a><a href="#saunas" data-nav="saunas">Saunas</a><a href="#biomarkers-test" data-nav="biomarkers-test">BioMarkers Test</a><a href="https://www.bookladata.com/appointments" target="_blank" rel="noopener">The Club</a>
   </nav>
   <div class="hdr-r">
     <div class="search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span></div>
@@ -226,6 +226,7 @@ const ART={
  head:'<circle cx="42" cy="34" r="20"/><path d="M30 34h24"/><path d="M42 54v26"/>',
  sauna:'<path d="M14 22l28-10 28 10v52H14z"/><path d="M14 22h56M30 74V40h24v34"/><path d="M42 40v34"/>',
  glasses:'<circle cx="24" cy="46" r="14"/><circle cx="60" cy="46" r="14"/><path d="M38 44c3-3 5-3 8 0M10 42l-6-4M74 42l6-4"/>',
+ test:'<rect x="14" y="34" width="56" height="42" rx="4"/><path d="M14 46h56"/><rect x="34" y="8" width="12" height="34" rx="6"/><path d="M34 22h12"/><path d="M40 52c-4 6-6 9-6 12a6 6 0 0 0 12 0c0-3-2-6-6-12z"/>',
  goggles:'<path d="M8 36c0-8 6-12 14-12h40c8 0 14 4 14 12v6c0 8-6 12-14 12H52l-6-6h-8l-6 6H22c-8 0-14-4-14-12z"/><path d="M8 40H2M76 40h6"/>',
 };
 const P=[
@@ -254,21 +255,22 @@ const P=[
  {n:'SmartGoggles',c:'sleep',s:'Eye mask with heat and vibration · 2nd gen',p:169,was:209,a:'goggles'},
  {n:'Eco-Sauna Vidro',c:'sauna',s:'Glass steam sauna · up to 6 people · 172 × 172 × 180 cm',p:9990,a:'sauna',neu:true,note:'Installation not included'},
  {n:'Eco-Sauna Mini Vidro',c:'sauna',s:'Compact glass steam sauna · up to 3 people · 172 × 100 × 180 cm',p:6990,a:'sauna',neu:true,note:'Installation not included'},
+ {n:'MaxPerformance Test',c:'bio',s:'At-home blood test · 10 biomarkers',p:100.81,a:'test',neu:true},
  {n:'Ladata Body Oil',c:'care',s:'Muscles & Mind Recovery · zero-waste, vegan, cruelty-free',p:20,a:'wand',neu:true},
 ];
 // Filled with img/<slug>.jpg once photos arrive, e.g. PHOTOS['theragun-pro-plus']=1
-const PHOTOS={'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverypulse-arm':1,'recoverypulse-calf':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
+const PHOTOS={'maxperformance-test':1,'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverypulse-arm':1,'recoverypulse-calf':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
 // Black Friday: 15% off every price until the sale ends, then prices revert automatically.
 const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
 const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};
 P.forEach((x,i)=>{bfPrice(x);x.i=i;x.slug=x.n.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/-$/,'')});
-const CATS=[['all','All','gun'],['mass','Massage','gun'],['comp','Compression','boots'],['heat','Hot &amp; cold','back'],['skin','Skin &amp; LED','mask'],['ir','Infrared','back'],['sleep','Sleep','goggles'],['sauna','Saunas','sauna'],['care','Body care','wand']];
+const CATS=[['all','All','gun'],['mass','Massage','gun'],['comp','Compression','boots'],['heat','Hot &amp; cold','back'],['skin','Skin &amp; LED','mask'],['ir','Infrared','back'],['sleep','Sleep','goggles'],['sauna','Saunas','sauna'],['care','Body care','wand'],['bio','BioMarkers Test','test']];
 const svg=(k,cls='art')=>`<svg class="${cls}" viewBox="0 0 84 90" aria-hidden="true">${ART[k]}</svg>`;
 const eur=n=>'€'+n.toLocaleString('en-IE',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
 const $=id=>document.getElementById(id);
 let st={cat:'all',sort:'feat',price:[],stock:false,sale:false},wish=new Set();
 try{Object.assign(st,JSON.parse(localStorage.getItem('ladata-v2')||'{}'))}catch(e){}
-const HK={all:'all',massage:'mass',compression:'comp','hot-and-cold':'heat','skin-and-led':'skin',infrared:'ir',sleep:'sleep',saunas:'sauna','body-care':'care'};
+const HK={all:'all',massage:'mass',compression:'comp','hot-and-cold':'heat','skin-and-led':'skin',infrared:'ir',sleep:'sleep',saunas:'sauna','body-care':'care','biomarkers-test':'bio'};
 const KH=Object.fromEntries(Object.entries(HK).map(([a,b])=>[b,a]));
 function fromHash(){const k=HK[(location.hash||'').slice(1)];if(k)st.cat=k}
 fromHash();
