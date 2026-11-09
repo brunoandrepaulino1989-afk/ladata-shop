@@ -70,6 +70,8 @@ nav a{white-space:nowrap}
 .gal figure{margin:0;position:relative;flex:0 0 100%;scroll-snap-align:start;overflow:hidden;background:var(--bg)}
 .gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gal img.contain{object-fit:contain;padding:8%}
+.gal img.whole{object-fit:contain}
+.gal img.bk{filter:blur(28px) brightness(.85);transform:scale(1.2)}
 .gallery .badge{position:absolute;top:14px;left:14px;font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--line);padding:3px 8px;z-index:2}
 .arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;cursor:pointer}
 .arrow.prev{left:14px}.arrow.next{right:14px}
@@ -268,7 +270,7 @@ function render(){
   const badge=p.out?'Sold out':p.was?(BF_ON?'−15%':'Sale'):p.neu?'New':'';
   const imgs=[[p.main||`${p.slug}.jpg`,p.n,p.main?true:!p.cover]].concat((p.g||[]).concat(LIFE[p.c]||[]).map(([f,a])=>[f,a,false]));
   const arr=d=>`<svg class="ico" viewBox="0 0 24 24"><path d="${d}"/></svg>`;
-  $('gallery').innerHTML=`${badge?`<span class="badge"${badge==='Sale'||badge==='−15%'?' style="color:var(--sale)"':''}>${badge}</span>`:''}<div class="gal" id="gal" tabindex="0" aria-label="${p.n} images">${imgs.map(([f,a,contain],i)=>`<figure><img class="${contain?'contain':''}" src="/img/${f}" alt="${a}"${i?' loading="lazy"':''}></figure>`).join('')}</div>${imgs.length>1?`<button class="arrow prev" aria-label="Previous image">${arr('m15 5-7 7 7 7')}</button><button class="arrow next" aria-label="Next image">${arr('m9 5 7 7-7 7')}</button>`:''}<div class="thumbs">${imgs.length>1?imgs.map(([f,a,contain],i)=>`<button data-i="${i}" aria-label="Image ${i+1}"><img class="${contain?'contain':''}" src="/img/${f}" alt=""></button>`).join(''):''}<span class="count" id="count"></span></div>`;
+  $('gallery').innerHTML=`${badge?`<span class="badge"${badge==='Sale'||badge==='−15%'?' style="color:var(--sale)"':''}>${badge}</span>`:''}<div class="gal" id="gal" tabindex="0" aria-label="${p.n} images">${imgs.map(([f,a,contain],i)=>{const w=p.c==='sauna'&&!contain;return `<figure>${w?`<img class="bk" src="/img/${f}" alt="" aria-hidden="true"${i?' loading="lazy"':''}>`:''}<img class="${contain?'contain':w?'whole':''}" src="/img/${f}" alt="${a}"${i?' loading="lazy"':''}></figure>`}).join('')}</div>${imgs.length>1?`<button class="arrow prev" aria-label="Previous image">${arr('m15 5-7 7 7 7')}</button><button class="arrow next" aria-label="Next image">${arr('m9 5 7 7-7 7')}</button>`:''}<div class="thumbs">${imgs.length>1?imgs.map(([f,a,contain],i)=>`<button data-i="${i}" aria-label="Image ${i+1}"><img class="${contain?'contain':''}" src="/img/${f}" alt=""></button>`).join(''):''}<span class="count" id="count"></span></div>`;
   const gal=$('gal'),n=imgs.length,cur=()=>Math.round(gal.scrollLeft/gal.clientWidth);
   const go=i=>gal.scrollTo({left:Math.max(0,Math.min(n-1,i))*gal.clientWidth,behavior:'smooth'});
   const sync=()=>{const i=cur();$('count').textContent=n>1?`${i+1} / ${n}`:'';document.querySelectorAll('.thumbs button').forEach((b,j)=>b.setAttribute('aria-current',j===i));const pv=document.querySelector('.arrow.prev'),nx=document.querySelector('.arrow.next');if(pv){pv.disabled=i===0;nx.disabled=i===n-1}};
