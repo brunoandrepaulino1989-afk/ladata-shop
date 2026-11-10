@@ -30,6 +30,7 @@ export function quote(items) {
     const p = products[slug];
     const qty = Math.floor(Number(q));
     if (!p) throw new Error("One of the items in your bag is no longer available.");
+    if (p.out) throw new Error(`${p.name} is sold out. Remove it from your bag to continue.`);
     if (!(qty >= 1 && qty <= 20)) throw new Error(`Please choose between 1 and 20 of ${p.name}.`);
     if (p.price == null) throw new Error(`${p.name} has no price yet. Remove it from your bag to continue, and we will send you a quote by email.`);
     return { slug, name: p.name, image: `${SITE}/${p.image}`, unit: unitCents(p.price), qty };

@@ -101,6 +101,8 @@ nav a{white-space:nowrap}
 .stock{display:flex;gap:8px;align-items:center;font-size:14px}
 .stock i{width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .stock.out i{background:var(--muted)}
+.stock.lim i{background:#d08a00}
+.add button:disabled,#mAdd:disabled{background:#fff;color:var(--muted);border:1px solid var(--line);cursor:default}
 .add{display:flex;gap:8px}
 .add button{flex:1;border:0;border-radius:999px;padding:16px;font-weight:600;font-size:16px;background:var(--ink);color:#fff;cursor:pointer}
 .add button[disabled]{background:var(--soft);color:var(--muted);cursor:not-allowed}
@@ -222,19 +224,17 @@ const P=[
  {n:'Theragun Mini Plus',c:'mass',s:'Compact heated massage gun',p:269,d:'A heated, travel-sized massage gun that activates muscles, eases soreness and speeds up recovery.'},
  {n:'Theragun Mini',c:'mass',s:'Compact massage gun · 3rd gen',p:219,opts:'Available in <b>Black</b> and <b>Desert Rose</b>',d:'A compact, lightweight massage gun for relief from aches, tension and stress, wherever you are. Small enough for a gym bag or carry-on.'},
  {n:'Theragun Relief',c:'mass',s:'Gentle everyday massage',p:149,opts:'Available in <b>Navy</b> and <b>Sand</b>',d:'A lightweight, gentle percussion massager for easing everyday aches, tension and stiffness.'},
- {n:'JetBoots PRO Plus',c:'comp',s:'Compression, infrared LED and vibration',p:1049,opts:'Sizes <b>Short</b>, <b>Regular</b> and <b>Long</b>',d:'Three-in-one recovery boots that combine pneumatic compression, infrared LED and vibration therapy. The same boots we use in the Recovery Room.'},
- {n:'JetBoots Prime',c:'comp',s:'Wireless compression boots',p:529,opts:'Sizes <b>Short</b>, <b>Regular</b> and <b>Long</b>',d:'Lightweight, portable and wireless compression boots that help ease soreness after training, almost anywhere.'},
- {n:'RecoveryPulse Arm',c:'comp',s:'Compression sleeve with vibration',p:159,opts:'Sizes <b>XS</b> to <b>XL</b>',d:'A compression sleeve with vibration that speeds up recovery and relieves minor aches without slowing you down.'},
- {n:'RecoveryPulse Calf',c:'comp',s:'Calf compression sleeve with vibration',p:159,neu:1,d:'A calf compression sleeve with built-in vibration, for relief on the go.'},
- {n:'ThermNeck & Upper Back',c:'heat',s:'Percussion, heat and LED',p:349,neu:1,d:'A wearable neck and upper-back massager that combines Theragun percussion with heat and near-infrared LED light.'},
+ {n:'JetBoots PRO Plus',lim:1,c:'comp',s:'Compression, infrared LED and vibration',p:1049,opts:'Sizes <b>Short</b>, <b>Regular</b> and <b>Long</b>',d:'Three-in-one recovery boots that combine pneumatic compression, infrared LED and vibration therapy. The same boots we use in the Recovery Room.'},
+ {n:'JetBoots Prime',lim:1,c:'comp',s:'Wireless compression boots',p:529,opts:'Sizes <b>Short</b>, <b>Regular</b> and <b>Long</b>',d:'Lightweight, portable and wireless compression boots that help ease soreness after training, almost anywhere.'},
+ {n:'ThermNeck & Upper Back',out:1,c:'heat',s:'Percussion, heat and LED',p:349,neu:1,d:'A wearable neck and upper-back massager that combines Theragun percussion with heat and near-infrared LED light.'},
  {n:'ThermBack LED',c:'heat',s:'Lower back: heat, infrared and vibration',p:269,d:'Wearable heat, infrared, vibration and LED therapy for lower-back relief.'},
- {n:'RecoveryTherm Cube',c:'heat',s:'Hot and cold contrast therapy',p:null,d:'Handheld contrast therapy: switch between hot and cold to support recovery after training.'},
- {n:'Neck & Chest LED',c:'skin',s:'Hands-free LED for neck and chest',p:399,neu:1,d:'A hands-free LED device for the neck and chest.'},
- {n:'SkinSpa PRO',c:'skin',s:'Complete anti-ageing facial system',p:399,neu:1,d:'SkinSpa PRO combines several spa facial routines in one complete anti-ageing system.'},
+ {n:'RecoveryTherm Cube',lim:1,c:'heat',s:'Hot and cold contrast therapy',p:null,d:'Handheld contrast therapy: switch between hot and cold to support recovery after training.'},
+ {n:'Neck & Chest LED',out:1,c:'skin',s:'Hands-free LED for neck and chest',p:399,neu:1,d:'A hands-free LED device for the neck and chest.'},
+ {n:'SkinSpa PRO',out:1,c:'skin',s:'Complete anti-ageing facial system',p:399,neu:1,d:'SkinSpa PRO combines several spa facial routines in one complete anti-ageing system.'},
  {n:'TheraFace Mask Glo',c:'skin',s:'LED mask with 504 LEDs and massage',p:349,d:'A clinically proven LED light mask with 504 LEDs and built-in massage, for radiant skin.'},
- {n:'SkinSpa CryoCurrent',c:'skin',s:'Cold microcurrent to lift and depuff',p:299,neu:1,d:'Cold microcurrent that is clinically proven to lift, firm and contour while depuffing.'},
- {n:'SkinSpa ThermLED',c:'skin',s:'Facial LED with heated massage',p:199,d:'A handheld four-wavelength LED facial tool for lines, uneven tone, redness and blemishes, with heated massage to help serums absorb.'},
- {n:'ThermFace Massage',c:'skin',s:'Heated percussive facial massage',p:199,d:'A portable, heated percussive facial massager that eases jaw tension and relaxes the face and neck.'},
+ {n:'SkinSpa CryoCurrent',out:1,c:'skin',s:'Cold microcurrent to lift and depuff',p:299,neu:1,d:'Cold microcurrent that is clinically proven to lift, firm and contour while depuffing.'},
+ {n:'SkinSpa ThermLED',out:1,c:'skin',s:'Facial LED with heated massage',p:199,d:'A handheld four-wavelength LED facial tool for lines, uneven tone, redness and blemishes, with heated massage to help serums absorb.'},
+ {n:'ThermFace Massage',out:1,c:'skin',s:'Heated percussive facial massage',p:199,d:'A portable, heated percussive facial massager that eases jaw tension and relaxes the face and neck.'},
  {n:'TheraFace Depuffing Wand',c:'skin',s:'Depuffing on the go',p:149,opts:'Available in <b>White</b> and <b>Indigo</b>',d:'A portable wand for reducing puffiness, at home or on the go.'},
  {n:'Redvion One',c:'sleep',s:'Blue-light blocking glasses',p:59.99,was:79.99,neu:1,d:'Glasses for people who want to sleep and recover better. They block 98% of screen blue light, help the body produce melatonin and reduce eye strain. Lightweight TR90 frames.'},
  {n:'SmartGoggles',c:'sleep',s:'Eye mask with heat and vibration · 2nd gen',p:169,was:209,d:'The redesigned SmartGoggles have a 100% blackout design and more comfort, with heat and vibration to help you switch off.'},
@@ -287,8 +287,8 @@ function render(){
     <div class="price">${price}</div>
     <p class="lead">${p.d}</p>
     ${p.opts?`<div class="opts">${p.opts}</div>`:''}
-    <div class="stock${p.out?' out':''}"><i></i>${p.out?'Sold out · we will email you when it is back':'In stock · ships in 1–2 working days'}</div>
-    <div class="add"><button id="addBtn">Add to bag</button><button class="wish" id="wishBtn" aria-pressed="${wish.has(p.slug)}" aria-label="Save ${p.n}"><svg class="ico" viewBox="0 0 24 24" style="margin:auto"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+    <div class="stock${p.out?' out':p.lim?' lim':''}"><i></i>${p.out?'Sold out':p.lim?'Limited availability · ships in 1–2 working days':'In stock · ships in 1–2 working days'}</div>
+    <div class="add"><button id="addBtn"${p.out?' disabled':''}>${p.out?'Sold out':'Add to bag'}</button><button class="wish" id="wishBtn" aria-pressed="${wish.has(p.slug)}" aria-label="Save ${p.n}"><svg class="ico" viewBox="0 0 24 24" style="margin:auto"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
     <ul class="perks">
       <li><svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>${p.note?p.note+' · delivery arranged with you':'Shipping €9.90 + VAT, all over Europe with FedEx'}</li>
       <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>30-day returns</li>
@@ -304,14 +304,14 @@ function render(){
   $('band').className='bfb';
   {const t=Math.max(0,BF_END-Date.now()),d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60;
   $('band').innerHTML=`<span class="tag">Black Friday</span><div class="mid"><h2>15% off everything</h2><p>Now until 1 December · while stock lasts</p></div><div class="r"><div class="cd" aria-label="Time left in the sale">${d}<small>d</small><i>·</i>${String(h).padStart(2,'0')}<small>h</small><i>·</i>${String(m).padStart(2,'0')}<small>m</small></div><a href="/shop#${CH[p.c]}">Shop the sale &rarr;</a></div>`}
-  const same=P.filter(x=>x.c===p.c&&x!==p&&x.c!=='sauna'),other=P.filter(x=>x.c!==p.c&&x.c!=='sauna'&&!x.out);
+  const same=P.filter(x=>x.c===p.c&&x!==p&&x.c!=='sauna'&&!x.out),other=P.filter(x=>x.c!==p.c&&x.c!=='sauna'&&!x.out);
   const pick=same.slice(0,2).concat(other.filter((_,i)=>i%5===P.indexOf(p)%5)).slice(0,4);
   while(pick.length<4){const x=other.find(o=>!pick.includes(o));if(!x)break;pick.push(x)}
   $('more').innerHTML=pick.map(x=>`<a class="card" href="#${x.slug}"><div class="t"><img class="${x.cover?'cover':''}" src="/img/${x.slug}.jpg" alt="${x.n}" loading="lazy"></div><div><div class="nm">${x.n}</div><div class="cs">${x.s}</div><div class="pr">${x.p==null?'Price to be confirmed':x.was?`<span style="color:var(--sale)">${eur(x.p)}</span> <s style="color:var(--muted)">${eur(x.was)}</s>`:eur(x.p)}${x.p==null?'':'<span class="vat">VAT not included</span>'}</div></div></a>`).join('');
-  $('mbar').innerHTML=`<div><b>${p.n}</b>${p.p==null?'Price to be confirmed':eur(p.p)+(p.was?` <s style="color:var(--muted)">${eur(p.was)}</s>`:'')+' <small style="color:var(--muted)">excl. VAT</small>'}</div><button id="mAdd">Add to bag</button>`;
+  $('mbar').innerHTML=`<div><b>${p.n}</b>${p.p==null?'Price to be confirmed':eur(p.p)+(p.was?` <s style="color:var(--muted)">${eur(p.was)}</s>`:'')+' <small style="color:var(--muted)">excl. VAT</small>'}</div><button id="mAdd"${p.out?' disabled':''}>${p.out?'Sold out':'Add to bag'}</button>`;
   if(window._io)window._io.disconnect();window._io=new IntersectionObserver(([en])=>$('mbar').classList.toggle('on',!en.isIntersecting));window._io.observe($('addBtn'));
   $('mAdd').onclick=()=>$('addBtn').click();
-  $('addBtn').onclick=()=>LadataBag.add(p,$('addBtn'));
+  $('addBtn').onclick=()=>{if(!p.out)LadataBag.add(p,$('addBtn'))};
   $('wishBtn').onclick=e=>{wish.has(p.slug)?wish.delete(p.slug):wish.add(p.slug);e.currentTarget.setAttribute('aria-pressed',wish.has(p.slug))};
 }
 function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._h);e._h=setTimeout(()=>e.classList.remove('on'),2000)}

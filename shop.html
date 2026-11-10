@@ -94,6 +94,8 @@ h1 sup{font-size:.32em;font-weight:500;color:var(--muted);vertical-align:top;mar
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6%;transition:transform .5s ease}
 .tile img.cover{object-fit:cover;padding:0}
 .note{color:var(--muted);font-size:12px}
+.lim{color:#9a5b00;font-size:12px;font-weight:600}
+.qadd:disabled{background:#fff;color:var(--muted);border-color:var(--line);cursor:default}
 .ph{position:absolute;bottom:10px;right:12px;font-size:11px;color:var(--muted)}
 .badge{position:absolute;top:12px;left:12px;font-size:12px;font-weight:600;background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:2px}
 .badge.sale{color:var(--sale)}
@@ -237,19 +239,17 @@ const P=[
  {n:'Theragun Mini Plus',c:'mass',s:'Compact heated massage gun',p:269,a:'gun'},
  {n:'Theragun Mini',c:'mass',s:'Compact massage gun · 3rd gen',p:219,a:'gun',col:['#1b1b1b','#d9a9a0']},
  {n:'Theragun Relief',c:'mass',s:'Gentle everyday massage',p:149,a:'relief',col:['#22304a','#d8cbb5']},
- {n:'JetBoots PRO Plus',c:'comp',s:'Compression, infrared LED and vibration',p:1049,a:'boots',sizes:3},
- {n:'JetBoots Prime',c:'comp',s:'Wireless compression boots',p:529,a:'boots',sizes:3},
- {n:'RecoveryPulse Arm',c:'comp',s:'Compression sleeve with vibration',p:159,a:'sleeve',sizes:5},
- {n:'RecoveryPulse Calf',c:'comp',s:'Calf compression sleeve with vibration',p:159,a:'sleeve',neu:true},
- {n:'ThermNeck & Upper Back',c:'heat',s:'Neck and upper back: percussion, heat, LED',p:349,a:'neck',neu:true},
+ {n:'JetBoots PRO Plus',lim:1,c:'comp',s:'Compression, infrared LED and vibration',p:1049,a:'boots',sizes:3},
+ {n:'JetBoots Prime',lim:1,c:'comp',s:'Wireless compression boots',p:529,a:'boots',sizes:3},
+ {n:'ThermNeck & Upper Back',out:1,c:'heat',s:'Neck and upper back: percussion, heat, LED',p:349,a:'neck',neu:true},
  {n:'ThermBack LED',c:'heat',s:'Lower back: heat, infrared and vibration',p:269,a:'back'},
- {n:'RecoveryTherm Cube',c:'heat',s:'Hot and cold contrast therapy',p:null,a:'cube'},
- {n:'Neck & Chest LED',c:'skin',s:'Hands-free LED for neck and chest',p:399,a:'chest',neu:true},
- {n:'SkinSpa PRO',c:'skin',s:'Complete anti-ageing facial system',p:399,a:'head',neu:true},
+ {n:'RecoveryTherm Cube',lim:1,c:'heat',s:'Hot and cold contrast therapy',p:null,a:'cube'},
+ {n:'Neck & Chest LED',out:1,c:'skin',s:'Hands-free LED for neck and chest',p:399,a:'chest',neu:true},
+ {n:'SkinSpa PRO',out:1,c:'skin',s:'Complete anti-ageing facial system',p:399,a:'head',neu:true},
  {n:'TheraFace Mask Glo',c:'skin',s:'LED mask with 504 LEDs and massage',p:349,a:'mask'},
- {n:'SkinSpa CryoCurrent',c:'skin',s:'Cold microcurrent to lift and depuff',p:299,a:'face',neu:true},
- {n:'SkinSpa ThermLED',c:'skin',s:'Facial LED with heated massage',p:199,a:'face'},
- {n:'ThermFace Massage',c:'skin',s:'Heated percussive facial massage',p:199,a:'face'},
+ {n:'SkinSpa CryoCurrent',out:1,c:'skin',s:'Cold microcurrent to lift and depuff',p:299,a:'face',neu:true},
+ {n:'SkinSpa ThermLED',out:1,c:'skin',s:'Facial LED with heated massage',p:199,a:'face'},
+ {n:'ThermFace Massage',out:1,c:'skin',s:'Heated percussive facial massage',p:199,a:'face'},
  {n:'TheraFace Depuffing Wand',c:'skin',s:'Depuffing on the go',p:149,a:'wand',col:['#f4f4f2','#3a3f8f']},
  {n:'Redvion One',c:'sleep',s:'Blue-light blocking glasses',p:59.99,was:79.99,a:'glasses',neu:true},
  {n:'SmartGoggles',c:'sleep',s:'Eye mask with heat and vibration · 2nd gen',p:169,was:209,a:'goggles'},
@@ -259,7 +259,7 @@ const P=[
  {n:'Ladata Body Oil',c:'care',s:'Muscles & Mind Recovery · zero-waste, vegan, cruelty-free',p:20,a:'wand',neu:true},
 ];
 // Filled with img/<slug>.jpg once photos arrive, e.g. PHOTOS['theragun-pro-plus']=1
-const PHOTOS={'maxperformance-test':1,'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverypulse-arm':1,'recoverypulse-calf':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
+const PHOTOS={'maxperformance-test':1,'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
 // Black Friday: 15% off every price until the sale ends, then prices revert automatically.
 const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
 const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};
@@ -297,8 +297,8 @@ function card(p){
   return `<a class="card" data-i="${p.i}" href="/product#${p.slug}">
     <div class="tile">${PHOTOS[p.slug]?`<img class="${p.cover?'cover':''}" src="/img/${p.slug}.jpg" alt="${p.n}" loading="lazy">`:svg(p.a)}${badge}<button class="wish" data-w="${p.i}" aria-pressed="${wish.has(p.i)}" aria-label="Save ${p.n}"><svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button>${PHOTOS[p.slug]?'':'<span class="ph">photo to come</span>'}</div>
     <div class="sws">${sw}</div>
-    <div class="info"><span class="nm">${p.n}</span><span class="sub">${p.s}</span><span class="pr">${price}${p.p==null?'':'<span class="vat">VAT not included</span>'}</span>${p.note?`<span class="note">${p.note}</span>`:''}</div>
-    <button class="qadd" type="button" data-add="${p.i}" aria-label="Add ${p.n} to bag">${QADD}</button>
+    <div class="info"><span class="nm">${p.n}</span><span class="sub">${p.s}</span><span class="pr">${price}${p.p==null?'':'<span class="vat">VAT not included</span>'}</span>${p.note?`<span class="note">${p.note}</span>`:''}${p.lim&&!p.out?'<span class="lim">Limited availability</span>':''}</div>
+    ${p.out?'<button class="qadd" type="button" disabled>Sold out</button>':`<button class="qadd" type="button" data-add="${p.i}" aria-label="Add ${p.n} to bag">${QADD}</button>`}
   </a>`;
 }
 function render(){

@@ -44,20 +44,11 @@
   "price": 529,
   "image": "img/jetboots-prime.jpg"
  },
- "recoverypulse-arm": {
-  "name": "RecoveryPulse Arm",
-  "price": 159,
-  "image": "img/recoverypulse-arm.jpg"
- },
- "recoverypulse-calf": {
-  "name": "RecoveryPulse Calf",
-  "price": 159,
-  "image": "img/recoverypulse-calf.jpg"
- },
  "thermneck-and-upper-back": {
   "name": "ThermNeck & Upper Back",
   "price": 349,
-  "image": "img/thermneck-and-upper-back.jpg"
+  "image": "img/thermneck-and-upper-back.jpg",
+  "out": true
  },
  "thermback-led": {
   "name": "ThermBack LED",
@@ -72,12 +63,14 @@
  "neck-and-chest-led": {
   "name": "Neck & Chest LED",
   "price": 399,
-  "image": "img/neck-and-chest-led.jpg"
+  "image": "img/neck-and-chest-led.jpg",
+  "out": true
  },
  "skinspa-pro": {
   "name": "SkinSpa PRO",
   "price": 399,
-  "image": "img/skinspa-pro.jpg"
+  "image": "img/skinspa-pro.jpg",
+  "out": true
  },
  "theraface-mask-glo": {
   "name": "TheraFace Mask Glo",
@@ -87,17 +80,20 @@
  "skinspa-cryocurrent": {
   "name": "SkinSpa CryoCurrent",
   "price": 299,
-  "image": "img/skinspa-cryocurrent.jpg"
+  "image": "img/skinspa-cryocurrent.jpg",
+  "out": true
  },
  "skinspa-thermled": {
   "name": "SkinSpa ThermLED",
   "price": 199,
-  "image": "img/skinspa-thermled.jpg"
+  "image": "img/skinspa-thermled.jpg",
+  "out": true
  },
  "thermface-massage": {
   "name": "ThermFace Massage",
   "price": 199,
-  "image": "img/thermface-massage.jpg"
+  "image": "img/thermface-massage.jpg",
+  "out": true
  },
  "theraface-depuffing-wand": {
   "name": "TheraFace Depuffing Wand",
