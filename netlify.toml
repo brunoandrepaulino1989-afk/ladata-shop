@@ -36,6 +36,15 @@
   to = "/contact.html"
   status = 200
 
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
 # Keep server code and notes off the public site
 [[redirects]]
   from = "/netlify/*"
