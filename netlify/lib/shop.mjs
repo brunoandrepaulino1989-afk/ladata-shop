@@ -141,7 +141,7 @@ ${sum("Subtotal", eur(d.sub))}${sum("Shipping · FedEx", eur(d.ship))}${sum("VAT
 </table>${d.saved > 0 ? `<div style="margin-top:14px;background:#eef6ee;color:#245c36;border-radius:10px;padding:11px 14px;font-size:14px">You saved <b>${eur(d.saved)}</b> with our Black Friday offer.</div>` : ""}</td></tr>
 <tr><td style="padding:26px 36px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
 <td valign="top" width="50%" style="background:${CREAM};border-radius:12px;padding:18px 18px;font-size:14px;line-height:1.6"><div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:${MUTED};margin-bottom:6px">Delivery to</div>${d.name ? `<b>${esc(d.name)}</b><br>` : ""}${d.addrLines.map(esc).join("<br>")}</td>
-<td width="12"></td>
+<td width="12" style="width:12px;min-width:12px;font-size:0;line-height:0">&nbsp;</td>
 <td valign="top" width="50%" style="background:${CREAM};border-radius:12px;padding:18px 18px;font-size:14px;line-height:1.6"><div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:${MUTED};margin-bottom:6px">What happens next</div>We pack your order and hand it to <b>FedEx</b>. You get the tracking link by email the day it ships.</td>
 </tr></table></td></tr>
 <tr><td align="center" style="padding:30px 36px 8px">
