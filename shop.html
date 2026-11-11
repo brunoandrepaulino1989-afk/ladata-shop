@@ -9,7 +9,8 @@
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}.bf-go::after{content:"";position:absolute;inset:0}.bf{cursor:pointer}
+</style>
 <style>
 /* Layout: On-style listing. White page, big left title, category pills, filter drawer, 4-col grid of square grey tiles with name/subtitle/price under. */
 :root{
@@ -170,10 +171,10 @@ footer .wrap{padding-block:36px;display:flex;justify-content:space-between;flex-
 <main>
   <div class="wrap head">
     <h1><span id="h1t">All products</span><sup id="total"></sup></h1>
-    <section class="bf" aria-label="Black Friday">
+    <section class="bf" aria-label="Black Friday" style="position:relative">
       <div class="bf-tag">Black Friday</div>
       <div class="bf-copy"><b>15% off everything</b><span>Now until 1 December · while stock lasts</span></div>
-      <div class="bf-right"><div class="bf-cd" id="bfcd" aria-label="Time left in the sale"></div><a href="/shop#all">Shop the sale &rarr;</a></div>
+      <div class="bf-right"><div class="bf-cd" id="bfcd" aria-label="Time left in the sale"></div><a class="bf-go" href="/shop#sale">Shop the sale &rarr;</a></div>
     </section>
     <div class="cats" id="cats" role="group" aria-label="Categories"></div>
   </div>
@@ -271,20 +272,22 @@ const eur=n=>'€'+n.toLocaleString('en-IE',{minimumFractionDigits:n%1?2:0,maxim
 const $=id=>document.getElementById(id);
 let st={cat:'all',sort:'feat',price:[],stock:false,sale:false},wish=new Set();
 try{Object.assign(st,JSON.parse(localStorage.getItem('ladata-v2')||'{}'))}catch(e){}
-const HK={all:'all',massage:'mass',compression:'comp','hot-and-cold':'heat','skin-and-led':'skin',infrared:'ir',sleep:'sleep',saunas:'sauna','body-care':'care','biomarkers-test':'bio'};
+const HK={sale:'sale',all:'all',massage:'mass',compression:'comp','hot-and-cold':'heat','skin-and-led':'skin',infrared:'ir',sleep:'sleep',saunas:'sauna','body-care':'care','biomarkers-test':'bio'};
 const KH=Object.fromEntries(Object.entries(HK).map(([a,b])=>[b,a]));
 function fromHash(){const k=HK[(location.hash||'').slice(1)];if(k)st.cat=k}
 fromHash();
 
 // Infrared groups every product that uses infrared or red/near-infrared LED light, across categories.
 const IR=new Set(['theragun-pro-plus','jetboots-pro-plus','thermneck-and-upper-back','thermback-led','neck-and-chest-led','theraface-mask-glo','skinspa-thermled']);
-const inCat=(p,k)=>k==='all'||p.c===k||(k==='ir'&&IR.has(p.slug));
+const RND=P.map(()=>Math.random());
+const inCat=(p,k)=>k==='sale'?(!p.out&&p.p!=null):k==='all'||p.c===k||(k==='ir'&&IR.has(p.slug));
 function base(){return P.filter(p=>inCat(p,st.cat))}
 function list(){
   let L=base().filter(p=>(!st.stock||!p.out)&&(!st.sale||p.was)&&(!st.price.length||st.price.some(r=>{const[a,b]=r.split('-').map(Number);return p.p!=null&&p.p>=a&&p.p<b})));
   if(st.sort==='asc')L=[...L].sort((a,b)=>(a.p??1e9)-(b.p??1e9));
   if(st.sort==='desc')L=[...L].sort((a,b)=>(b.p??-1)-(a.p??-1));
   if(st.sort==='new')L=[...L].sort((a,b)=>(b.neu|0)-(a.neu|0));
+  if(st.sort==='feat'&&st.cat==='sale')L=[...L].sort((a,b)=>RND[a.i]-RND[b.i]);
   return L;
 }
 function cats(){
@@ -305,7 +308,7 @@ function card(p){
 function render(){
   const L=list();
   const cl=(CATS.find(c=>c[0]===st.cat)||[])[1];
-  $('h1t').innerHTML=st.cat==='all'?'All products':cl;$('total').textContent=st.cat==='all'?P.length:'';
+  $('h1t').innerHTML=st.cat==='all'?'All products':st.cat==='sale'?'Black Friday · 15% off':cl;$('total').textContent=st.cat==='all'?P.length:'';
   document.querySelectorAll('[data-nav]').forEach(a=>{if(HK[a.dataset.nav]===st.cat)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   if(KH[st.cat]&&location.hash.slice(1)!==KH[st.cat])history.replaceState(null,'','#'+KH[st.cat]);
   $('count').textContent=L.length+(L.length===1?' product':' products');
@@ -334,8 +337,8 @@ $('apply').onclick=()=>{
   st.price=['p1','p2','p3'].filter(id=>$(id).checked).map(id=>$(id).value);
   st.stock=$('stock').checked;st.sale=$('saleOnly').checked;
   drawer(false);cats();render();
-window.addEventListener('hashchange',()=>{fromHash();cats();render();window.scrollTo({top:0,behavior:'smooth'})});
 };
+window.addEventListener('hashchange',()=>{fromHash();cats();render();window.scrollTo({top:0,behavior:'smooth'})});
 $('clr').onclick=()=>{st={cat:'all',sort:'feat',price:[],stock:false,sale:false};cats();sync()};
 document.addEventListener('keydown',e=>{if(e.key==='Escape')drawer(false)});
 $('grid').addEventListener('click',e=>{

@@ -9,7 +9,8 @@
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}.bf-go::after{content:"";position:absolute;inset:0}.bf{cursor:pointer}
+</style>
 <style>
 /* Layout: On-style homepage. Full-bleed triptych hero, slim campaign strip, category tiles, product rail, split editorial, 3-step ritual, cream club band, newsletter, footer. All white. */
 :root{
@@ -204,11 +205,11 @@ footer .bot{grid-column:1/-1;display:flex;justify-content:space-between;gap:16px
     </div></div>
   </section>
 
-  <section class="bf" aria-label="Black Friday"><div class="wrap">
+  <section class="bf" aria-label="Black Friday" style="position:relative"><div class="wrap">
     <div class="bf-tag">Black Friday</div>
     <div class="bf-copy">15% off everything<span>Now until 1 December · while stock lasts</span></div>
     <div class="bf-cd" id="bfcd" aria-label="Time left in the sale"></div>
-    <a href="/shop#all">Shop the sale &rarr;</a>
+    <a class="bf-go" href="/shop#sale">Shop the sale &rarr;</a>
   </div></section>
 
   <section class="block"><div class="wrap">

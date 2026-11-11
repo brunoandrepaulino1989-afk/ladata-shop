@@ -151,6 +151,7 @@ nav a{white-space:nowrap}
 .bfb .cd small{font-size:11px;opacity:.7;margin-left:1px}.bfb .cd i{font-style:normal;opacity:.45;margin:0 4px}
 .bfb a{color:#fff;font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;white-space:nowrap}
 .bfb a:hover{border-color:#fff}
+.bfb{position:relative;cursor:pointer}.bfb a::after{content:"";position:absolute;inset:0}
 @media (max-width:900px){.bfb{padding:16px 18px;gap:10px 20px}.bfb .tag{border:0;padding:0;width:100%}.bfb .r{width:100%;justify-content:space-between}}
 
 /* rail */
@@ -304,7 +305,7 @@ function render(){
   const b=BAND[p.c]||BAND.def;
   $('band').className='bfb';
   {const t=Math.max(0,BF_END-Date.now()),d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60;
-  $('band').innerHTML=`<span class="tag">Black Friday</span><div class="mid"><h2>15% off everything</h2><p>Now until 1 December · while stock lasts</p></div><div class="r"><div class="cd" aria-label="Time left in the sale">${d}<small>d</small><i>·</i>${String(h).padStart(2,'0')}<small>h</small><i>·</i>${String(m).padStart(2,'0')}<small>m</small></div><a href="/shop#${CH[p.c]}">Shop the sale &rarr;</a></div>`}
+  $('band').innerHTML=`<span class="tag">Black Friday</span><div class="mid"><h2>15% off everything</h2><p>Now until 1 December · while stock lasts</p></div><div class="r"><div class="cd" aria-label="Time left in the sale">${d}<small>d</small><i>·</i>${String(h).padStart(2,'0')}<small>h</small><i>·</i>${String(m).padStart(2,'0')}<small>m</small></div><a href="/shop#sale">Shop the sale &rarr;</a></div>`}
   const same=P.filter(x=>x.c===p.c&&x!==p&&x.c!=='sauna'&&!x.out),other=P.filter(x=>x.c!==p.c&&x.c!=='sauna'&&!x.out);
   const pick=same.slice(0,2).concat(other.filter((_,i)=>i%5===P.indexOf(p)%5)).slice(0,4);
   while(pick.length<4){const x=other.find(o=>!pick.includes(o));if(!x)break;pick.push(x)}
