@@ -19,6 +19,23 @@
   to = "/success.html"
   status = 200
 
+[[redirects]]
+  from = "/shipping"
+  to = "/shipping.html"
+  status = 200
+[[redirects]]
+  from = "/returns"
+  to = "/returns.html"
+  status = 200
+[[redirects]]
+  from = "/warranty"
+  to = "/warranty.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
 # Keep server code and notes off the public site
 [[redirects]]
   from = "/netlify/*"
