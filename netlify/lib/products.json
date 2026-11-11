@@ -58,7 +58,8 @@
  "recoverytherm-cube": {
   "name": "RecoveryTherm Cube",
   "price": null,
-  "image": "img/recoverytherm-cube.jpg"
+  "image": "img/recoverytherm-cube.jpg",
+  "out": true
  },
  "neck-and-chest-led": {
   "name": "Neck & Chest LED",
