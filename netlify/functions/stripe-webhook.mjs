@@ -37,7 +37,15 @@ export default async (req) => {
   if (!send) return json({ received: true });
 
   try {
-    const d = details(await getSession(obj.id));
+    const session = await getSession(obj.id);
+    const d = details(session);
+    // Put the order number in front of the payment description in Stripe, so it matches the emails.
+    const pi = typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id;
+    if (pi) {
+      const items = d.lines.filter((l) => !/^(Shipping|VAT)/.test(l.name)).map((l) => `${l.qty}x ${l.name}`).join(", ");
+      await stripe(`payment_intents/${pi}`, { method: "POST", params: { description: `${d.no} · ${items}`.slice(0, 900), metadata: { order: d.no } } })
+        .catch((e) => console.error("stripe-webhook: could not label payment", e.message));
+    }
     const notify = process.env.ORDER_NOTIFY_TO;
     if (d.email) await sendEmail({ to: d.email, subject: `Your Ladata order ${d.no} is confirmed`, html: customerEmail(d), replyTo: notify });
     if (notify) await sendEmail({ to: notify, subject: `New order ${d.no}`, html: shopEmail(d), replyTo: d.email });

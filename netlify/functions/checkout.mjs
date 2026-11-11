@@ -19,6 +19,8 @@ export default async (req) => {
   }));
   line_items.push({ quantity: 1, price_data: { currency: "eur", unit_amount: q.ship, product_data: { name: "Shipping · FedEx" } } });
   line_items.push({ quantity: 1, price_data: { currency: "eur", unit_amount: q.vat, product_data: { name: "VAT (23%)" } } });
+  const cart = q.lines.map((l) => `${l.slug}:${l.qty}`).join(",").slice(0, 490);
+  const summary = ("Ladata shop: " + q.lines.map((l) => `${l.qty}x ${l.name}`).join(", ")).slice(0, 900);
   try {
     const session = await stripe("checkout/sessions", {
       method: "POST",
@@ -33,7 +35,9 @@ export default async (req) => {
         locale: "auto",
         success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${origin}/shop?bag=open`,
-        metadata: { cart: q.lines.map((l) => `${l.slug}:${l.qty}`).join(",").slice(0, 490) },
+        metadata: { cart },
+        // Shown in the Stripe dashboard (Payments list) so every payment says what was bought.
+        payment_intent_data: { description: summary, metadata: { cart } },
       },
     });
     return json({ url: session.url });
