@@ -54,6 +54,12 @@ section a{text-underline-offset:3px}
 .btns{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-block;border-radius:999px;padding:13px 22px;font-weight:600;border:1px solid var(--ink);text-decoration:none;background:#fff}
 .btn.dark{background:var(--ink);color:#fff}
+.mail{position:relative}
+button.btn{font:inherit;font-weight:600;cursor:pointer}
+.menu{position:absolute;right:0;bottom:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);padding:6px;min-width:220px;z-index:5}
+.menu a,.menu button{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:9px;text-decoration:none;font:inherit;font-size:14.5px;background:none;border:0;cursor:pointer;color:var(--ink)}
+.menu a:hover,.menu button:hover{background:var(--cream)}
+@media (max-width:560px){.menu{left:0;right:auto}}
 .btn.wa{background:#25D366;border-color:#25D366;color:#fff}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
 footer .in{max-width:1180px;margin:0 auto;padding:24px 16px;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
@@ -105,12 +111,24 @@ section{grid-template-columns:1fr;gap:4px}
 <p>In case of a dispute, consumers may turn to an alternative dispute resolution entity: <b>CICAP, Centro de Informação de Consumo e Arbitragem do Porto</b> (<a href="https://www.cicap.pt" target="_blank" rel="noopener">www.cicap.pt</a>). More information at the Consumer Portal, <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener">www.consumidor.gov.pt</a>.</p></div></section><section id="law"><div class="num">08</div><div><h2>Law</h2><p>These terms are governed by Portuguese law, without prejudice to the mandatory consumer protection rules of your country of residence.</p></div></section></div>
 </div>
 <div class="help"><div class="in"><div><h3>Questions about these terms?</h3><p>Write to us at <a href="mailto:info@bookladata.com">info@bookladata.com</a> or send us a WhatsApp message.</p></div>
-<div class="btns"><a class="btn dark" href="mailto:info@bookladata.com?subject=Question%20about%20the%20Terms%20%26%20Conditions">Email us</a><a class="btn wa" href="https://wa.me/351937329049" target="_blank" rel="noopener">WhatsApp</a></div></div></div>
+<div class="btns"><div class="mail"><button class="btn dark" type="button" aria-expanded="false" aria-controls="mailmenu">Email us</button>
+<div class="menu" id="mailmenu" hidden>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@bookladata.com&su=Question%20about%20the%20Terms%20%26%20Conditions" target="_blank" rel="noopener">Open in Gmail</a>
+<a href="https://outlook.live.com/mail/0/deeplink/compose?to=info@bookladata.com&subject=Question%20about%20the%20Terms%20%26%20Conditions" target="_blank" rel="noopener">Open in Outlook</a>
+<a href="mailto:info@bookladata.com?subject=Question%20about%20the%20Terms%20%26%20Conditions">Open my email app</a>
+<button type="button" class="copy">Copy address</button>
+</div></div><a class="btn wa" href="https://wa.me/351937329049" target="_blank" rel="noopener">WhatsApp</a></div></div></div>
 <footer><div class="in"><span>© 2026 Ladata Portugal, Lda · NIF 518236870 · Rua Tomaz Ribeiro 550, 4450-298 Matosinhos, Portugal</span><span><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></span></div></footer>
 <script>
 (()=>{const links=[...document.querySelectorAll('.toc a')];const m=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));m.get(e.target.id)?.classList.add('on')}})},{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>io.observe(s))})();
+(()=>{const b=document.querySelector('.mail>button'),m=document.getElementById('mailmenu'),c=m.querySelector('.copy');
+const set=o=>{m.hidden=!o;b.setAttribute('aria-expanded',o)};
+b.onclick=e=>{e.stopPropagation();set(m.hidden)};
+document.addEventListener('click',e=>{if(!m.contains(e.target))set(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+c.onclick=async()=>{try{await navigator.clipboard.writeText('info@bookladata.com');c.textContent='Copied ✓'}catch(_){c.textContent='info@bookladata.com'}setTimeout(()=>{c.textContent='Copy address';set(false)},1500)};})();
 </script>
 </body>
 </html>
