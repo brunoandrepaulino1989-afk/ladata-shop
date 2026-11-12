@@ -149,7 +149,7 @@ ${sum("Subtotal", eur(d.sub))}${sum("Shipping · FedEx", eur(d.ship))}${sum("VAT
 <div style="margin-top:12px"><a href="${SITE}/shop#all" style="color:${INK};font-size:14px;text-decoration:underline">Continue shopping</a></div></td></tr>
 <tr><td style="padding:24px 36px 32px"><div style="border-top:1px solid ${LINE};padding-top:20px;font-size:14px;line-height:1.7;color:#333">Questions about your order? Just reply to this email, or message us on ${link("https://wa.me/351937329049", "WhatsApp")}.<br><span style="color:${MUTED}">See you soon, the Ladata team.</span></div></td></tr>
 </table></td></tr>
-<tr><td align="center" style="padding:22px 12px 6px;font-size:13px">${link(SITE + "/shipping", "Shipping")} &nbsp;·&nbsp; ${link(SITE + "/returns", "30-day returns")} &nbsp;·&nbsp; ${link(SITE + "/warranty", "Warranty")} &nbsp;·&nbsp; ${link("https://www.instagram.com/ladata_humanoptimisation/", "Instagram")}</td></tr>
+<tr><td align="center" style="padding:22px 12px 6px;font-size:13px">${link(SITE + "/shipping", "Shipping")} &nbsp;·&nbsp; ${link(SITE + "/returns", "30-day returns")} &nbsp;·&nbsp; ${link("https://www.instagram.com/ladata_humanoptimisation/", "Instagram")}</td></tr>
 <tr><td align="center" style="padding:8px 12px 0;font-size:12px;line-height:1.6;color:${MUTED}">Ladata Portugal, Lda · House of Human Optimisation<br>Rua Tomaz Ribeiro 550, Matosinhos, Portugal</td></tr>
 </table></td></tr></table></body></html>`;
 }
