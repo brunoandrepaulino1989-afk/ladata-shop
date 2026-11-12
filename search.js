@@ -8,6 +8,7 @@ const P=[{"n":"Theragun PRO Plus","c":"Massage","s":"Heat, LED and vibration mas
 {"n":"Theragun Mini Plus","c":"Massage","s":"Compact heated massage gun","p":269,"out":false,"slug":"theragun-mini-plus","img":null,"cover":false},
 {"n":"Theragun Mini","c":"Massage","s":"Compact massage gun · 3rd gen","p":219,"out":false,"slug":"theragun-mini","img":null,"cover":false},
 {"n":"Theragun Relief","c":"Massage","s":"Gentle everyday massage","p":149,"out":false,"slug":"theragun-relief","img":null,"cover":false},
+{"n":"WaveDuo","c":"Massage","s":"Vibrating roller for the neck, back and spine","p":109,"out":false,"slug":"waveduo","img":null,"cover":false},
 {"n":"JetBoots PRO Plus","c":"Compression","s":"Compression, infrared LED and vibration","p":1049,"out":false,"slug":"jetboots-pro-plus","img":null,"cover":false},
 {"n":"JetBoots Prime","c":"Compression","s":"Wireless compression boots","p":529,"out":false,"slug":"jetboots-prime","img":null,"cover":false},
 {"n":"ThermNeck & Upper Back","c":"Hot & cold","s":"Percussion, heat and LED","p":349,"out":true,"slug":"thermneck-and-upper-back","img":null,"cover":false},

@@ -243,6 +243,7 @@ const P=[
  {n:'Theragun Mini Plus',c:'mass',s:'Compact heated massage gun',p:269,a:'gun'},
  {n:'Theragun Mini',c:'mass',s:'Compact massage gun · 3rd gen',p:219,a:'gun',col:['#1b1b1b','#d9a9a0']},
  {n:'Theragun Relief',c:'mass',s:'Gentle everyday massage',p:149,a:'relief',col:['#22304a','#d8cbb5']},
+ {n:'WaveDuo',c:'mass',s:'Vibrating roller for the neck, back and spine',p:109,a:'gun',neu:true},
  {n:'JetBoots PRO Plus',lim:1,c:'comp',s:'Compression, infrared LED and vibration',p:1049,a:'boots',sizes:3},
  {n:'JetBoots Prime',lim:1,c:'comp',s:'Wireless compression boots',p:529,a:'boots',sizes:3},
  {n:'ThermNeck & Upper Back',out:1,c:'heat',s:'Neck and upper back: percussion, heat, LED',p:349,a:'neck',neu:true},
@@ -263,7 +264,7 @@ const P=[
  {n:'Eco-Sauna Mini Vidro',c:'sauna',s:'Compact glass steam sauna · up to 3 people · 172 × 100 × 180 cm',p:6990,a:'sauna',neu:true,note:'Installation not included'},
 ];
 // Filled with img/<slug>.jpg once photos arrive, e.g. PHOTOS['theragun-pro-plus']=1
-const PHOTOS={'maxperformance-test':1,'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
+const PHOTOS={'waveduo':1,'maxperformance-test':1,'eco-sauna-mini-vidro':1,'eco-sauna-vidro':1,'feature-recover':1,'jetboots-prime':1,'jetboots-pro-plus':1,'ladata-body-oil':1,'neck-and-chest-led':1,'recoverytherm-cube':1,'redvion-one':1,'skinspa-cryocurrent':1,'skinspa-pro':1,'skinspa-thermled':1,'smartgoggles':1,'theraface-depuffing-wand':1,'theraface-mask-glo':1,'theragun-mini':1,'theragun-mini-plus':1,'theragun-prime':1,'theragun-prime-plus':1,'theragun-pro-plus':1,'theragun-relief':1,'theragun-sense':1,'thermback-led':1,'thermface-massage':1,'thermneck-and-upper-back':1};
 // Black Friday: 15% off every price until the sale ends, then prices revert automatically.
 const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
 const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};

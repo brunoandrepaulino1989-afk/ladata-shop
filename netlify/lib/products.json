@@ -34,6 +34,11 @@
   "price": 149,
   "image": "img/theragun-relief.jpg"
  },
+ "waveduo": {
+  "name": "WaveDuo",
+  "price": 109,
+  "image": "img/waveduo.jpg"
+ },
  "jetboots-pro-plus": {
   "name": "JetBoots PRO Plus",
   "price": 1049,
