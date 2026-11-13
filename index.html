@@ -289,15 +289,15 @@ const eur=n=>'€'+n.toLocaleString('en-IE',{minimumFractionDigits:n%1?2:0,maxim
 const BF_END=new Date('2026-12-01T23:59:59+00:00'),BF_ON=Date.now()<BF_END;
 const bfPrice=x=>{if(BF_ON&&x.p!=null){x.was=x.p;x.p=Math.round(x.p*85)/100}};
 const R=[
- {n:'Theragun PRO Plus',s:'Heat, LED and vibration massage',p:649,i:'theragun-pro-plus',b:'Best seller'},
- {n:'JetBoots PRO Plus',s:'Compression, infrared LED and vibration',p:1049,i:'jetboots-pro-plus'},
- {n:'TheraFace Mask Glo',s:'LED mask with 504 LEDs and massage',p:349,i:'theraface-mask-glo'},
- {n:'Theragun Sense',s:'Guided-routine massage · 2nd gen',p:299,i:'theragun-sense',b:'New'},
- {n:'SmartGoggles',s:'Eye mask with heat and vibration',p:169,was:209,i:'smartgoggles',b:'Sale'},
- {n:'Redvion One',s:'Blue-light blocking glasses',p:59.99,was:79.99,i:'redvion-one',b:'Sale'},
+ {n:'Theragun Prime Plus',s:'Heated massage gun',p:419,i:'theragun-prime-plus',b:'Best seller'},
  {n:'JetBoots Prime',s:'Wireless compression boots',p:529,i:'jetboots-prime'},
+ {n:'WaveDuo',s:'Vibrating roller for the neck, back and spine',p:100,i:'waveduo',b:'New'},
+ {n:'Theragun Sense',s:'Guided-routine massage · 2nd gen',p:299,i:'theragun-sense',b:'New'},
+ {n:'TheraFace Depuffing Wand',s:'Depuffing on the go',p:149,i:'theraface-depuffing-wand'},
  {n:'Theragun Mini Plus',s:'Compact heated massage gun',p:269,i:'theragun-mini-plus'},
-];
+ {n:'Redvion One',s:'Blue-light blocking glasses',p:59.99,was:79.99,i:'redvion-one',b:'Sale'},
+ {n:'Theragun Mini',s:'Compact massage gun · 3rd gen',p:219,i:'theragun-mini'},
+].filter((x,_,a,rit=[...document.querySelectorAll('.cats a.cat')].map(c=>c.getAttribute('href').split('#')[1]))=>!rit.includes(x.i));
 R.forEach(x=>{bfPrice(x);if(BF_ON)x.b='−15%'});
 const QADD='<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Add to bag';
 $('rail').innerHTML=R.map(p=>`<a class="card" href="/product#${p.i}"><div class="t">${p.b?`<span class="badge"${p.b==='Sale'||p.b==='−15%'?' style="color:var(--sale)"':''}>${p.b}</span>`:''}<img class="${p.cover?'cover':''}" src="/img/${p.i}.jpg" alt="${p.n}" loading="lazy"></div><div><div class="nm">${p.n}</div><div class="sub">${p.s}</div><div class="pr">${p.was?`<span class="now">${eur(p.p)}</span><s>${eur(p.was)}</s>`:eur(p.p)}<span class="vat">VAT not included</span></div><button class="qadd" type="button" data-add="${R.indexOf(p)}" aria-label="Add ${p.n} to bag">${QADD}</button></div></a>`).join('');
