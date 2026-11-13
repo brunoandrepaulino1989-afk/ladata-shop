@@ -297,7 +297,7 @@ const R=[
  {n:'Theragun Mini Plus',s:'Compact heated massage gun',p:269,i:'theragun-mini-plus'},
  {n:'Redvion One',s:'Blue-light blocking glasses',p:59.99,was:79.99,i:'redvion-one',b:'Sale'},
  {n:'Theragun Mini',s:'Compact massage gun · 3rd gen',p:219,i:'theragun-mini'},
-].filter((x,_,a,rit=[...document.querySelectorAll('.cats a.cat')].map(c=>c.getAttribute('href').split('#')[1]))=>!rit.includes(x.i));
+].filter((x,_,a,rit=[...document.querySelectorAll('.cats a.cat')].map(c=>c.getAttribute('href').split('#')[1]))=>!rit.includes(x.i)&&!/sauna/.test(x.i));
 R.forEach(x=>{bfPrice(x);if(BF_ON)x.b='−15%'});
 const QADD='<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>Add to bag';
 $('rail').innerHTML=R.map(p=>`<a class="card" href="/product#${p.i}"><div class="t">${p.b?`<span class="badge"${p.b==='Sale'||p.b==='−15%'?' style="color:var(--sale)"':''}>${p.b}</span>`:''}<img class="${p.cover?'cover':''}" src="/img/${p.i}.jpg" alt="${p.n}" loading="lazy"></div><div><div class="nm">${p.n}</div><div class="sub">${p.s}</div><div class="pr">${p.was?`<span class="now">${eur(p.p)}</span><s>${eur(p.was)}</s>`:eur(p.p)}<span class="vat">VAT not included</span></div><button class="qadd" type="button" data-add="${R.indexOf(p)}" aria-label="Add ${p.n} to bag">${QADD}</button></div></a>`).join('');
