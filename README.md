@@ -20,7 +20,7 @@ When you change a price, change it in **both** `netlify/lib/products.json` (what
 | `STRIPE_SECRET_KEY` | yes | Stripe > Developers > API keys > Secret key (`sk_live_…`, or `sk_test_…` to test) |
 | `STRIPE_WEBHOOK_SECRET` | yes | Signing secret (`whsec_…`) of the webhook below |
 | `RESEND_API_KEY` | yes | resend.com, after verifying the ladata.shop domain |
-| `ORDER_NOTIFY_TO` | recommended | Ladata inbox that gets a copy of every order |
+| `ORDER_NOTIFY_TO` | optional | Extra inboxes (comma-separated) that get a copy of every order. sales@ladata.shop always gets one. |
 | `MAIL_FROM` | no | Default `Ladata <orders@ladata.shop>` |
 | `SITE_URL` | no | Default `https://ladata.shop` (used for images in emails) |
 | `SHIP_COUNTRIES` | no | Comma-separated country codes. Default: the 27 EU countries |

@@ -46,9 +46,10 @@ export default async (req) => {
       await stripe(`payment_intents/${pi}`, { method: "POST", params: { description: `${d.no} · ${items}`.slice(0, 900), metadata: { order: d.no } } })
         .catch((e) => console.error("stripe-webhook: could not label payment", e.message));
     }
-    const notify = process.env.ORDER_NOTIFY_TO;
-    if (d.email) await sendEmail({ to: d.email, subject: `Your Ladata order ${d.no} is confirmed`, html: customerEmail(d), replyTo: notify });
-    if (notify) await sendEmail({ to: notify, subject: `New order ${d.no}`, html: shopEmail(d), replyTo: d.email });
+    // The shop copy always goes to sales@ladata.shop, plus any addresses in ORDER_NOTIFY_TO (comma-separated).
+    const notify = [...new Set(["sales@ladata.shop", ...String(process.env.ORDER_NOTIFY_TO || "").split(",")].map((a) => a.trim().toLowerCase()).filter(Boolean))];
+    if (d.email) await sendEmail({ to: d.email, subject: `Your Ladata order ${d.no} is confirmed`, html: customerEmail(d), replyTo: "sales@ladata.shop" });
+    await sendEmail({ to: notify, subject: `New order ${d.no}`, html: shopEmail(d), replyTo: d.email });
   } catch (e) {
     console.error("stripe-webhook", e.message);
     return json({ error: e.message }, 500);
