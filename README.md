@@ -31,3 +31,5 @@ When you change a price, change it in **both** `netlify/lib/products.json` (what
 2. Developers > Webhooks > Add endpoint: `https://ladata.shop/api/stripe-webhook`,
    events `checkout.session.completed` and `checkout.session.async_payment_succeeded`. Copy its signing secret.
 3. Settings > Branding: Ladata logo and colours, so the payment page looks like the shop.
+
+If a push does not deploy within a couple of minutes, open Netlify → Deploys → Trigger deploy → Deploy project, then reconnect the repository under Project configuration → Build & deploy if it keeps happening.
