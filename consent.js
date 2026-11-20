@@ -2,7 +2,7 @@
    Analytics only loads after the visitor clicks "Accept" (GDPR). The choice is kept in localStorage.
    To show the notice again (e.g. from the Privacy page): <a href="#" onclick="ladataCookies();return false">. */
 (function(){
-  var TAG_ID='GTM-T5M8TN35'; // Google tag for the GA4 property "Ladata Shop" (Google's own snippet uses gtm.js)
+  var GA_ID='G-2YEBTD0RSL'; // GA4 property "ladata.shop" (Ladata Google account)
   var KEY='ladata-cookies';
   function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
   function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
@@ -11,8 +11,8 @@
     if(loaded)return;loaded=true;
     window.dataLayer=window.dataLayer||[];
     window.gtag=function(){dataLayer.push(arguments)};
-    gtag('js',new Date());
-    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id='+TAG_ID;document.head.appendChild(s);
+    gtag('js',new Date());gtag('config',GA_ID);
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
   }
   function hide(){var b=document.getElementById('ld-cookies');if(b)b.remove()}
   function show(){
