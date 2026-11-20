@@ -4,6 +4,7 @@ Online shop for Ladata (House of Human Optimisation). Static pages hosted on Net
 payments through Stripe Checkout, order emails through Resend.
 
 - `index.html` homepage · `shop.html` all products (`/shop#saunas` etc.) · `product.html` product page (`/product#slug`) · `success.html` order confirmation
+- `consent.js` cookie notice + Google Analytics (loads only after "Accept"); every page includes it before `</head>`. New pages must include it too.
 - `bag.js` the bag drawer, shared by all pages (kept in localStorage)
 - `netlify/lib/products.json` **the price list the server charges** (prices excl. VAT, before the Black Friday discount)
 - `netlify/lib/shop.mjs` prices, 15% Black Friday until 1 Dec 2026, €9.90 shipping, 23% VAT on (products + shipping), Stripe and email helpers
